@@ -193,23 +193,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   /* ==========================================================================
-     5. FITUR SALIN EMAIL KE CLIPBOARD
+     5. FITUR SALIN EMAIL & NOMOR KE CLIPBOARD
      ========================================================================== */
-  const copyEmailBtn = document.getElementById('copy-email-btn');
-  if (copyEmailBtn) {
-    copyEmailBtn.addEventListener('click', (e) => {
+  const setupCopyBtn = (btnId, textToCopy) => {
+    const btn = document.getElementById(btnId);
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
       e.preventDefault();
-      navigator.clipboard.writeText('ahmadzq2004@gmail.com').then(() => {
-        const originalHTML = copyEmailBtn.innerHTML;
-        copyEmailBtn.innerHTML = '<span>Tersalin!</span> ✓';
-        copyEmailBtn.classList.add('text-emerald-500', 'font-semibold');
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<span>Tersalin!</span> ✓';
+        btn.classList.add('text-emerald-500', 'font-semibold');
         setTimeout(() => {
-          copyEmailBtn.innerHTML = originalHTML;
-          copyEmailBtn.classList.remove('text-emerald-500', 'font-semibold');
+          btn.innerHTML = originalHTML;
+          btn.classList.remove('text-emerald-500', 'font-semibold');
         }, 2000);
       }).catch(err => {
-        console.error('Gagal menyalin email:', err);
+        console.error('Gagal menyalin:', err);
       });
     });
-  }
+  };
+
+  setupCopyBtn('copy-email-btn', 'ahmadzq2004@gmail.com');
+  setupCopyBtn('copy-phone-btn', '+6285848477782');
 });
