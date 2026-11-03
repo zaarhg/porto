@@ -1505,137 +1505,115 @@
     </div>
   </section>
 
-  <!-- ==================== 09 // KONTAK & FOOTER ==================== -->
-  <footer id="kontak" class="relative overflow-hidden border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 py-16 sm:py-20">
-    <!-- Grid Latar Belakang Teknis Halus -->
-    <div class="hero-grid-bg absolute inset-0 pointer-events-none opacity-30 dark:opacity-15"></div>
-
-    <!-- Cahaya Latar Ambient -->
-    <div
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 sm:w-[600px] h-96 sm:h-[400px] rounded-full bg-gradient-to-tr from-brand-500/10 via-cyan-500/10 to-transparent blur-3xl pointer-events-none">
-    </div>
+    <!-- ==================== KONTAK & FOOTER ==================== -->
+  <footer id="kontak" class="relative overflow-hidden pt-14 sm:pt-20 pb-10 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800/80">
+    <!-- Pola Grid & Cahaya Dekoratif Halus -->
+    <div class="hero-grid-bg absolute inset-0 pointer-events-none opacity-35 dark:opacity-15"></div>
 
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- KARTU UTAMA CTA KOLABORASI -->
+      <div class="relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg p-6 sm:p-10 lg:p-12">
+        <!-- Efek Ambient Glow di Sudut Kartu -->
+        <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-brand-500/15 dark:bg-brand-500/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 blur-3xl pointer-events-none"></div>
 
-      <!-- Hub Kolaborasi Card Utama -->
-      <div
-        class="bg-white/85 dark:bg-slate-900/85 backdrop-blur-md rounded-2xl border border-slate-200 dark:border-slate-800 p-7 sm:p-12 shadow-sm text-center">
-        
-        <!-- Status Badge -->
-        <div
-          class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/25 text-emerald-700 dark:text-emerald-400 font-mono text-[11px] sm:text-xs mb-4">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
-          <span>Status: Terbuka untuk Peluang Kerja & Kolaborasi Teknis</span>
-        </div>
-
-        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-          Siap Berkontribusi pada Tim Anda
-        </h2>
-
-        <p class="mt-3 text-xs sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Tertarik mendiskusikan peluang karir, rekayasa infrastruktur jaringan, sistem IoT, maupun otomatisasi? Jangan
-          ragu untuk menghubungi saya melalui salah satu saluran di bawah ini.
-        </p>
-
-        <!-- 3 Kartu Saluran Komunikasi Interaktif -->
-        <div class="mt-9 grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
-          <!-- Kartu 1: Email -->
-          <div
-            class="bg-slate-50 dark:bg-slate-950/70 p-6 rounded-xl border border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:border-brand-500 dark:hover:border-brand-400 transition-all duration-200 group">
-            <div>
-              <div
-                class="w-11 h-11 rounded-lg bg-blue-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                </svg>
-              </div>
-              <span class="text-[11px] font-mono font-semibold text-brand-600 dark:text-brand-400">Surel Resmi</span>
-              <h3 class="text-base font-bold text-slate-900 dark:text-white mt-1">Kirim Email</h3>
-              <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1 break-all">ahmadzq2004@gmail.com</p>
+          <!-- Sisi Kiri: Pesan Utama & Fokus Peran -->
+          <div class="lg:col-span-7 text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-400 font-mono text-xs mb-4">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>09 // MARI BERKOLABORASI • OPEN FOR OPPORTUNITIES</span>
             </div>
-            <div class="mt-6 pt-3.5 border-t border-slate-200/70 dark:border-slate-800/80 flex items-center justify-between text-xs">
-              <a href="mailto:ahmadzq2004@gmail.com"
-                class="font-semibold text-brand-600 dark:text-brand-400 hover:underline inline-flex items-center gap-1">
-                <span>Tulis Email</span> ↗
-              </a>
-              <button id="copy-email-btn" type="button"
-                class="font-mono text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 inline-flex items-center gap-1 transition-colors"
-                title="Salin alamat email">
-                <span>Salin</span> 📋
-              </button>
+
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
+              Siap Berkontribusi pada Tim Infrastruktur & TI Anda
+            </h2>
+
+            <p class="mt-3 text-xs sm:text-sm lg:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl">
+              Terbuka untuk kesempatan kerja penuh waktu (<em>Full-Time</em>) maupun kolaborasi proyek teknis. Mari berdiskusi bagaimana pengalaman saya di bidang jaringan, sistem tertanam, dan operasional TI dapat mendukung instansi Anda.
+            </p>
+
+            <!-- Label Fokus Posisi -->
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Network Engineering</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">IT Infrastructure</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">System Administration</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">IoT Engineering</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">IT Support</span>
             </div>
           </div>
 
-          <!-- Kartu 2: WhatsApp -->
-          <div
-            class="bg-slate-50 dark:bg-slate-950/70 p-6 rounded-xl border border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:border-emerald-500 dark:hover:border-emerald-400 transition-all duration-200 group">
-            <div>
-              <div
-                class="w-11 h-11 rounded-lg bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.188 8.188 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24" />
-                </svg>
+          <!-- Sisi Kanan: Kartu Kanal Kontak Langsung -->
+          <div class="lg:col-span-5 flex flex-col gap-3">
+            <!-- Kanal 1: Email Utama -->
+            <a href="mailto:ahmadzq2004@gmail.com" class="group p-4 rounded-xl bg-slate-50 dark:bg-slate-800/70 hover:bg-brand-600 dark:hover:bg-brand-600 border border-slate-200 dark:border-slate-700/80 hover:border-brand-600 transition-all flex items-center justify-between gap-4">
+              <div class="flex items-center gap-3.5 min-w-0">
+                <div class="w-10 h-10 rounded-lg bg-brand-50 dark:bg-slate-800 group-hover:bg-white/20 text-brand-600 dark:text-brand-400 group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </div>
+                <div class="text-left truncate">
+                  <div class="text-[11px] font-mono text-slate-400 group-hover:text-brand-100">Kirim Email Resmi</div>
+                  <div class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white group-hover:text-white truncate">ahmadzq2004@gmail.com</div>
+                </div>
               </div>
-              <span class="text-[11px] font-mono font-semibold text-emerald-600 dark:text-emerald-400">Fast Response</span>
-              <h3 class="text-base font-bold text-slate-900 dark:text-white mt-1">WhatsApp Chat</h3>
-              <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1">+62 858-4847-7782</p>
-            </div>
-            <div class="mt-6 pt-3.5 border-t border-slate-200/70 dark:border-slate-800/80 flex items-center justify-between text-xs">
-              <a href="https://wa.me/6285848477782" target="_blank" rel="noopener"
-                class="font-semibold text-emerald-600 dark:text-emerald-400 hover:underline inline-flex items-center gap-1">
-                <span>Mulai Obrolan</span> ↗
-              </a>
-              <span class="font-mono text-slate-400 text-[11px]">Direct Chat</span>
-            </div>
-          </div>
+              <span class="text-slate-400 group-hover:text-white group-hover:translate-x-0.5 transition-all font-mono text-sm shrink-0">→</span>
+            </a>
 
-          <!-- Kartu 3: LinkedIn -->
-          <div
-            class="bg-slate-50 dark:bg-slate-950/70 p-6 rounded-xl border border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-200 group">
-            <div>
-              <div
-                class="w-11 h-11 rounded-lg bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-                </svg>
+            <!-- Kanal 2: WhatsApp Fast Response -->
+            <a href="https://wa.me/6285848477782" target="_blank" rel="noopener" class="group p-4 rounded-xl bg-slate-50 dark:bg-slate-800/70 hover:bg-emerald-600 dark:hover:bg-emerald-600 border border-slate-200 dark:border-slate-700/80 hover:border-emerald-600 transition-all flex items-center justify-between gap-4">
+              <div class="flex items-center gap-3.5 min-w-0">
+                <div class="w-10 h-10 rounded-lg bg-emerald-50 dark:bg-slate-800 group-hover:bg-white/20 text-emerald-600 dark:text-emerald-400 group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.188 8.188 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24"/></svg>
+                </div>
+                <div class="text-left truncate">
+                  <div class="text-[11px] font-mono text-slate-400 group-hover:text-emerald-100">Respon Cepat (WhatsApp)</div>
+                  <div class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white group-hover:text-white truncate">+62 858-4847-7782</div>
+                </div>
               </div>
-              <span class="text-[11px] font-mono font-semibold text-blue-600 dark:text-blue-400">Jejaring Karir</span>
-              <h3 class="text-base font-bold text-slate-900 dark:text-white mt-1">LinkedIn Profile</h3>
-              <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1">in/ahmad-za</p>
-            </div>
-            <div class="mt-6 pt-3.5 border-t border-slate-200/70 dark:border-slate-800/80 flex items-center justify-between text-xs">
-              <a href="https://www.linkedin.com/in/ahmad-za/" target="_blank" rel="noopener"
-                class="font-semibold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
-                <span>Lihat Profil</span> ↗
+              <span class="text-slate-400 group-hover:text-white group-hover:translate-x-0.5 transition-all font-mono text-sm shrink-0">→</span>
+            </a>
+
+            <!-- Kanal 3: LinkedIn & Unduh CV -->
+            <div class="grid grid-cols-2 gap-3 pt-1">
+              <a href="https://www.linkedin.com/in/ahmad-za/" target="_blank" rel="noopener" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/70 hover:border-brand-500 border border-slate-200 dark:border-slate-700/80 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 flex items-center justify-center gap-2 transition-all">
+                <svg class="w-4 h-4 fill-current text-brand-600 dark:text-brand-400" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                <span>LinkedIn</span>
               </a>
-              <span class="font-mono text-slate-400 text-[11px]">Connect</span>
+              <a href="assets/docs/cv-ahmad-zainul-qomar.pdf" download class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/70 hover:border-brand-500 border border-slate-200 dark:border-slate-700/80 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 flex items-center justify-center gap-2 transition-all">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                <span>Unduh CV</span>
+              </a>
             </div>
           </div>
 
         </div>
-
       </div>
 
-      <!-- Footer Bar: Hak Cipta, Lokasi & Navigasi Cepat -->
-      <div
-        class="mt-12 pt-8 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
-        <div class="flex items-center gap-2">
-          <span class="font-mono font-black text-slate-900 dark:text-white text-sm">A<span class="text-brand-600 dark:text-cyan-400">z</span></span>
-          <span>&copy; 2026 <strong>Ahmad Zainul Qomar, S.Tr.T.</strong> • Kulon Progo, D.I. Yogyakarta</span>
+      <!-- BARIS BAWAH FOOTER: IDENTITAS, ALAMAT & TAUTAN -->
+      <div class="mt-10 pt-8 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-500 dark:text-slate-400">
+        
+        <!-- Identitas & Lokasi -->
+        <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-600 dark:bg-brand-400"></span>
+            <strong class="text-slate-900 dark:text-white font-semibold">Ahmad Zainul Qomar, S.Tr.T.</strong>
+          </div>
+          <span class="hidden sm:inline text-slate-300 dark:text-slate-700">•</span>
+          <span>Jl. Raya Brosot No. 27, Kulon Progo, Yogyakarta 55661</span>
         </div>
-        <div class="flex flex-wrap justify-center items-center gap-5 font-mono text-[11px]">
-          <a href="https://www.instagram.com/ahhmdzn/" target="_blank" rel="noopener"
-            class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Instagram</a>
-          <a href="mailto:ahmadzainulqomar@mail.ugm.ac.id"
-            class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Email UGM</a>
-          <a href="#" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors flex items-center gap-1">
-            <span>Kembali ke Atas</span> ↑
+
+        <!-- Tautan Eksternal & Tombol Kembali ke Atas -->
+        <div class="flex flex-wrap justify-center items-center gap-5 font-mono">
+          <a href="https://www.instagram.com/ahhmdzn/" target="_blank" rel="noopener" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Instagram</a>
+          <a href="mailto:ahmadzainulqomar@mail.ugm.ac.id" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Email UGM</a>
+          <a href="#" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-brand-500 hover:text-brand-600 dark:hover:text-brand-400 transition-all">
+            <span>Ke Atas</span>
+            <span>↑</span>
           </a>
         </div>
+
       </div>
 
     </div>
