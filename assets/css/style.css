@@ -68,15 +68,15 @@ html.dark .hero-grid-bg {
 .hero-cutout-img {
   display: block;
   margin-bottom: -1px;
-  filter: drop-shadow(0 10px 20px rgba(15, 23, 42, 0.12));
+  filter: drop-shadow(0 12px 24px rgba(15, 23, 42, 0.14));
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 /* Skala Khusus Layar HP Kecil (Rapi di Tengah Bawah) */
 @media (max-width: 640px) {
   .hero-cutout-img {
-    width: 74vw;
-    max-width: 310px;
+    width: 78vw;
+    max-width: 320px;
     margin-top: -0.5rem;
   }
 }

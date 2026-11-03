@@ -143,42 +143,43 @@
   </header>
 
   <!-- ==================== HERO SECTION (CUTOUT BESAR TANPA BINGKAI) ==================== -->
-  <section
-    class="relative overflow-hidden border-b border-slate-200 dark:border-slate-800 bg-gradient-to-b from-slate-100/80 to-white dark:from-slate-900/60 dark:to-slate-950 pt-8 sm:pt-12 lg:pt-16">
+  <section id="hero"
+    class="relative overflow-hidden border-b border-slate-200 dark:border-slate-800 bg-gradient-to-b from-slate-100/70 via-slate-50 to-white dark:from-slate-900/60 dark:via-slate-950 dark:to-slate-950 pt-10 sm:pt-14 lg:pt-16">
+    <!-- Pola Grid Teknis Halus di Latar Belakang -->
     <div class="hero-grid-bg absolute inset-0 pointer-events-none opacity-45 dark:opacity-20"></div>
 
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-end">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-end">
 
-        <!-- Kolom Kiri: Teks, CTA & Sosial Media -->
-        <div class="lg:col-span-7 pb-6 lg:pb-16 text-left">
+        <!-- Kolom Kiri: Teks & CTA Utama -->
+        <div class="lg:col-span-7 pb-8 lg:pb-14 text-left">
+          <!-- Status Badge -->
           <div
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 border border-brand-200 dark:border-brand-500/30 text-brand-700 dark:text-brand-400 font-mono text-[11px] sm:text-xs mb-4">
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs mb-5 shadow-2xs">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
-            <span>Kulon Progo, Yogyakarta </span>
+            <span>Kulon Progo, D.I. Yogyakarta • Ready to Work</span>
           </div>
 
+          <!-- Nama Lengkap & Gelar (1 Baris Utuh di Desktop & Tablet) -->
           <h1
-            class="text-2xl sm:text-3xl md:text-4xl lg:text-[36px] xl:text-[42px] font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight whitespace-normal md:whitespace-nowrap">
+            class="text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.18] whitespace-normal sm:whitespace-nowrap">
             Ahmad Zainul Qomar, <span class="text-brand-600 dark:text-brand-400">S.Tr.T.</span>
           </h1>
 
-          <p class="mt-2.5 text-base sm:text-lg lg:text-xl font-semibold text-slate-700 dark:text-slate-200 font-mono">
+          <!-- Peran Utama -->
+          <p class="mt-2.5 text-base sm:text-lg lg:text-xl font-semibold text-brand-600 dark:text-brand-400 font-mono">
             IoT & Network Engineer
           </p>
 
-          <p class="mt-4 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
-            Lulusan Sarjana Terapan, Teknologi Rekayasa Internet, <strong>Universitas Gadjah Mada (IPK
-              3,75/4,00)</strong> dengan pengalaman kerja di lingkungan <strong>operasional bandara</strong> dan
-            <strong>infrastruktur jaringan</strong>. Terbiasa memecahkan masalah teknis secara sistematis, menyusun
-            dokumentasi yang rapi, dan membangun solusi berbasis teknologi dari perancangan hingga implementasi. Mudah
-            beradaptasi, serta berpengalaman memimpin tim dan mengelola kegiatan berskala nasional.
+          <!-- Bio Profil Ringkas & Berbobot -->
+          <p class="mt-4 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
+            Lulusan Sarjana Terapan, Teknologi Rekayasa Internet, <strong>Universitas Gadjah Mada (IPK 3,75/4,00)</strong> dengan pengalaman kerja di lingkungan <strong>operasional bandara</strong> dan <strong>infrastruktur jaringan</strong>. Terbiasa memecahkan masalah teknis secara sistematis, menyusun dokumentasi yang rapi, dan membangun solusi berbasis teknologi dari perancangan hingga implementasi.
           </p>
 
-          <!-- Tombol Aksi Utama (Full width di HP, proporsional di Desktop) -->
-          <div class="mt-7 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <!-- Tombol Aksi Utama -->
+          <div class="mt-7 flex flex-wrap items-center gap-3.5">
             <a href="assets/docs/cv-ahmad-zainul-qomar.pdf" download
-              class="inline-flex justify-center items-center gap-2 px-5 py-3 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-sm transition-all">
+              class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-sm transition-all hover:shadow hover:-translate-y-0.5">
               <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
@@ -186,66 +187,44 @@
               <span>Unduh CV (PDF)</span>
             </a>
             <a href="#proyek"
-              class="inline-flex justify-center items-center gap-2 px-5 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-brand-500 dark:hover:border-brand-400 text-slate-700 dark:text-slate-200 font-semibold text-sm transition-all">
+              class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-brand-500 dark:hover:border-brand-400 text-slate-700 dark:text-slate-200 font-semibold text-sm transition-all hover:-translate-y-0.5">
               <span>Eksplorasi Proyek Teknis</span>
+              <span class="text-brand-600 dark:text-brand-400">→</span>
             </a>
           </div>
 
-          <!-- Tautan Sosial Media: Versi Minimalis Rapi & Menyatu -->
+          <!-- Chip Fokus Bidang Teknis (Menggantikan baris kontak yang dihapus) -->
           <div
-            class="mt-7 pt-6 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-wrap items-center gap-x-5 gap-y-2.5 text-xs font-mono text-slate-600 dark:text-slate-400">
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/ahmad-za/" target="_blank" rel="noopener"
-              class="inline-flex items-center gap-2 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
-              <svg class="w-3.5 h-3.5 fill-current text-brand-600 dark:text-brand-400 shrink-0" viewBox="0 0 24 24">
-                <path
-                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-              </svg>
-              <span>in/ahmad-za</span>
-            </a>
-            <span class="hidden sm:inline text-slate-300 dark:text-slate-700 select-none">•</span>
-            <!-- Email -->
-            <a href="mailto:ahmadzq2004@gmail.com"
-              class="inline-flex items-center gap-2 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
-              <svg class="w-3.5 h-3.5 fill-current text-brand-600 dark:text-brand-400 shrink-0" viewBox="0 0 24 24">
-                <path
-                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-              </svg>
-              <span>ahmadzq2004@gmail.com</span>
-            </a>
-            <span class="hidden sm:inline text-slate-300 dark:text-slate-700 select-none">•</span>
-            <!-- WhatsApp -->
-            <a href="https://wa.me/6285848477782" target="_blank" rel="noopener"
-              class="inline-flex items-center gap-2 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-              <svg class="w-3.5 h-3.5 fill-current text-emerald-600 dark:text-emerald-400 shrink-0" viewBox="0 0 24 24">
-                <path
-                  d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.188 8.188 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1.01 2.56.12.17 1.72 2.75 4.25 3.74 2.1.83 2.52.66 2.98.62.45-.04 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28-.25-.13-1.46-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.54-1.34-.76-1.84-.19-.45-.39-.39-.54-.39z" />
-              </svg>
-              <span>+62 858-4847-7782</span>
-            </a>
-            <span class="hidden sm:inline text-slate-300 dark:text-slate-700 select-none">•</span>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/ahhmdzn/" target="_blank" rel="noopener"
-              class="inline-flex items-center gap-2 hover:text-pink-600 dark:hover:text-pink-400 transition-colors">
-              <svg class="w-3.5 h-3.5 fill-current text-pink-600 dark:text-pink-400 shrink-0" viewBox="0 0 24 24">
-                <path
-                  d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
-              </svg>
-              <span>@ahhmdzn</span>
-            </a>
+            class="mt-8 pt-5 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-wrap items-center gap-2 text-xs font-mono text-slate-600 dark:text-slate-400">
+            <span class="text-[11px] uppercase tracking-wider text-slate-400 dark:text-slate-500 font-semibold mr-1">Fokus Bidang:</span>
+            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shadow-2xs">Computer Networking</span>
+            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shadow-2xs">IoT & Embedded System</span>
+            <span class="px-2.5 py-1 rounded-md bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shadow-2xs">IT Infrastructure</span>
           </div>
         </div>
 
         <!-- Kolom Kanan: Foto Profil Cutout Proporsional & Rapat Kanan -->
-        <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-end self-end pt-2 lg:pt-0">
+        <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-end self-end pt-4 lg:pt-0">
           <!-- Cahaya Latar Halus di Belakang Foto -->
           <div
-            class="absolute bottom-0 w-64 h-64 sm:w-80 sm:h-80 lg:w-[350px] lg:h-[350px] rounded-full bg-gradient-to-tr from-brand-500/20 via-cyan-400/10 to-transparent blur-3xl pointer-events-none">
+            class="absolute bottom-4 right-0 sm:right-4 w-72 h-72 sm:w-80 sm:h-80 lg:w-[420px] lg:h-[420px] rounded-full bg-gradient-to-tr from-brand-500/20 via-cyan-400/15 to-transparent blur-3xl pointer-events-none">
+          </div>
+
+          <!-- Floating Badge: Kredensial UGM (Menghubungkan ruang visual & estetika modern) -->
+          <div
+            class="hidden sm:flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-lg absolute top-8 -left-4 lg:-left-10 z-20 pointer-events-none select-none">
+            <div class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+            </div>
+            <div class="text-left">
+              <div class="text-[10px] font-mono text-slate-400 dark:text-slate-500 uppercase tracking-wider">Universitas Gadjah Mada</div>
+              <div class="text-xs font-bold text-slate-900 dark:text-white">IPK 3.75 • Cum Laude</div>
+            </div>
           </div>
 
           <!-- Gambar Cutout Transparan (Ukuran Proporsional & Rapat ke Kanan) -->
           <img src="assets/img/profile.webp" alt="Ahmad Zainul Qomar, S.Tr.T."
-            class="hero-cutout-img relative z-10 w-64 sm:w-80 lg:w-[360px] xl:w-[390px] max-w-none h-auto object-contain select-none pointer-events-none block lg:translate-x-6 xl:translate-x-10">
+            class="hero-cutout-img relative z-10 w-72 sm:w-88 lg:w-[450px] xl:w-[490px] max-w-none h-auto object-contain select-none pointer-events-none block lg:translate-x-8 xl:translate-x-12">
         </div>
 
       </div>
