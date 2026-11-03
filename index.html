@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Portofolio Resmi Ahmad Zainul Qomar, S.Tr.T. — Network & Infrastructure Engineer, IoT Systems, dan Network Automation.">
+  <title>Ahmad Zainul Qomar, S.Tr.T. — Technical Portfolio</title>
+
+  <!-- Favicon / Branding Icon -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/logos/logo-az.svg">
+  <link rel="alternate icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- File CSS Kustom -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body
+  class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-300 selection:bg-brand-500 selection:text-white">
+
+  <!-- ==================== NAVBAR ==================== -->
+  <header
+    class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/85 dark:bg-slate-950/85 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Identitas Logo / Branding (Teks Modern Tanpa Latar Belakang) -->
+      <a href="#" class="inline-flex items-center group select-none py-1 focus:outline-none" aria-label="Az — Beranda">
+        <span class="font-mono text-2xl sm:text-[26px] font-black tracking-tighter leading-none transition-transform duration-200 group-hover:scale-105">
+          <span class="text-slate-900 dark:text-white transition-colors duration-200">A</span><span class="text-brand-600 dark:text-cyan-400 transition-colors duration-200">z</span>
+        </span>
+      </a>
+
+      <!-- Menu Navigasi Desktop -->
+      <nav class="hidden lg:flex items-center gap-6 text-xs xl:text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#pendidikan" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Pendidikan</a>
+        <a href="#pengalaman" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Pengalaman</a>
+        <a href="#proyek" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Proyek</a>
+        <a href="#keahlian" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Keahlian</a>
+        <a href="#sertifikasi" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Sertifikasi</a>
+        <a href="#pengabdian" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Pengabdian</a>
+        <a href="#prestasi" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Prestasi</a>
+        <a href="#organisasi" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Organisasi</a>
+      </nav>
+
+      <!-- Aksi Kanan: Toggle Tema & Tombol Kontak -->
+      <div class="flex items-center gap-2.5">
+        <button id="theme-toggle" type="button" aria-label="Ganti Mode Warna"
+          class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:border-brand-500 dark:hover:border-brand-400 transition-all">
+          <svg id="theme-toggle-light-icon" class="hidden w-4 h-4 text-amber-400" fill="currentColor"
+            viewBox="0 0 20 20">
+            <path
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              fill-rule="evenodd" clip-rule="evenodd"></path>
+          </svg>
+          <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4 text-slate-700" fill="currentColor"
+            viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+        </button>
+
+        <a href="#kontak"
+          class="hidden sm:inline-flex items-center px-3.5 py-2 rounded-lg text-xs font-semibold bg-brand-600 hover:bg-brand-700 text-white shadow-sm transition-colors">
+          Hubungi Saya
+        </a>
+
+        <!-- Tombol Menu Mobile -->
+        <button id="mobile-menu-btn" type="button" aria-label="Buka Menu"
+          class="lg:hidden p-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Dropdown Menu Mobile -->
+    <div id="mobile-menu"
+      class="hidden lg:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-2 pb-5 space-y-1.5 text-sm font-medium shadow-lg">
+      <a href="#pendidikan"
+        class="block py-2 px-3 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">01.
+        Pendidikan</a>
+      <a href="#pengalaman"
+        class="block py-2 px-3 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">02.
+        Pengalaman Kerja</a>
+      <a href="#proyek"
+        class="block py-2 px-3 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">03.
+        Proyek Teknis</a>
+      <a href="#keahlian"
+        class="block py-2 px-3 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">04.
+        Keahlian</a>
+      <a href="#sertifikasi"
+        class="block py-2 px-3 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">05.
+        Sertifikasi & Kursus</a>
+      <a href="#pengabdian"
+        class="block py-2 px-3 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">06.
+        Pengabdian Masyarakat</a>
+      <a href="#prestasi"
+        class="block py-2 px-3 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">07.
+        Prestasi</a>
+      <a href="#organisasi"
+        class="block py-2 px-3 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">08.
+        Organisasi & Kepanitiaan</a>
+      <div class="pt-2">
+        <a href="#kontak"
+          class="block w-full text-center py-2.5 rounded-lg bg-brand-600 text-white font-semibold">Hubungi Saya</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION (CUTOUT BESAR TANPA BINGKAI) ==================== -->
+  <section
+    class="relative overflow-hidden border-b border-slate-200 dark:border-slate-800 bg-gradient-to-b from-slate-100/80 to-white dark:from-slate-900/60 dark:to-slate-950 pt-8 sm:pt-12 lg:pt-16">
+    <div class="hero-grid-bg absolute inset-0 pointer-events-none opacity-45 dark:opacity-20"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-end">
+
+        <!-- Kolom Kiri: Teks, CTA & Sosial Media -->
+        <div class="lg:col-span-7 pb-6 lg:pb-16 text-left">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 border border-brand-200 dark:border-brand-500/30 text-brand-700 dark:text-brand-400 font-mono text-[11px] sm:text-xs mb-4">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+            <span>Kulon Progo, Yogyakarta • Ready for IT & Network Engineering</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+            Ahmad Zainul Qomar, <span class="text-brand-600 dark:text-brand-400">S.Tr.T.</span>
+          </h1>
+
+          <p class="mt-2.5 text-base sm:text-xl font-semibold text-slate-700 dark:text-slate-200 font-mono">
+            Network & Infrastructure Engineer • IoT & Automation
+          </p>
+
+          <p class="mt-4 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+            Lulusan Sarjana Terapan, Teknologi Rekayasa Internet, <strong>Universitas Gadjah Mada (IPK 3,75/4,00)</strong> dengan pengalaman kerja di lingkungan <strong>operasional bandara</strong> dan <strong>infrastruktur jaringan</strong>. Terbiasa memecahkan masalah teknis secara sistematis, menyusun dokumentasi yang rapi, dan membangun solusi berbasis teknologi dari perancangan hingga implementasi. Mudah beradaptasi, serta berpengalaman memimpin tim dan mengelola kegiatan berskala nasional.
+          </p>
+
+          <!-- Tombol Aksi Utama (Full width di HP, proporsional di Desktop) -->
+          <div class="mt-7 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <a href="assets/docs/cv-ahmad-zainul-qomar.pdf" download
+              class="inline-flex justify-center items-center gap-2 px-5 py-3 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-sm transition-all">
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+              </svg>
+              <span>Unduh CV (PDF)</span>
+            </a>
+            <a href="#proyek"
+              class="inline-flex justify-center items-center gap-2 px-5 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-brand-500 dark:hover:border-brand-400 text-slate-700 dark:text-slate-200 font-semibold text-sm transition-all">
+              <span>Eksplorasi Proyek Teknis</span>
+            </a>
+          </div>
+
+          <!-- Tautan Sosial Media dengan Ikon SVG -->
+          <div
+            class="mt-7 pt-6 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-mono text-slate-600 dark:text-slate-400">
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/ahmad-za/" target="_blank" rel="noopener"
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-900 hover:bg-brand-50 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-brand-400 border border-slate-200/80 dark:border-slate-800 transition-colors">
+              <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
+                <path
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+              </svg>
+              <span>in/ahmad-za</span>
+            </a>
+            <!-- Email -->
+            <a href="mailto:ahmadzq2004@gmail.com"
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-900 hover:bg-brand-50 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-brand-400 border border-slate-200/80 dark:border-slate-800 transition-colors">
+              <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+              <span>ahmadzq2004@gmail.com</span>
+            </a>
+            <!-- WhatsApp -->
+            <a href="https://wa.me/6285848477782" target="_blank" rel="noopener"
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-900 hover:bg-brand-50 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-brand-400 border border-slate-200/80 dark:border-slate-800 transition-colors">
+              <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
+                <path
+                  d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.188 8.188 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1.01 2.56.12.17 1.72 2.75 4.25 3.74 2.1.83 2.52.66 2.98.62.45-.04 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28-.25-.13-1.46-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.54-1.34-.76-1.84-.19-.45-.39-.39-.54-.39z" />
+              </svg>
+              <span>+62 858-4847-7782</span>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/ahhmdzn/" target="_blank" rel="noopener"
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-900 hover:bg-brand-50 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-brand-400 border border-slate-200/80 dark:border-slate-800 transition-colors">
+              <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
+                <path
+                  d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
+              </svg>
+              <span>@ahhmdzn</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Foto Profil Cutout Diperbesar Tanpa Bingkai -->
+        <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-end self-end pt-2 lg:pt-0">
+          <!-- Cahaya Latar Halus di Belakang Foto -->
+          <div
+            class="absolute bottom-0 w-72 h-72 sm:w-96 sm:h-96 lg:w-[440px] lg:h-[440px] rounded-full bg-gradient-to-tr from-brand-500/25 via-cyan-400/15 to-transparent blur-3xl pointer-events-none">
+          </div>
+
+          <!-- Gambar Cutout Transparan (Ukuran Diperbesar & Proporsional) -->
+          <img src="assets/img/profile.webp" alt="Ahmad Zainul Qomar, S.Tr.T."
+            class="hero-cutout-img relative z-10 w-72 sm:w-96 lg:w-[490px] xl:w-[530px] max-w-none h-auto object-contain select-none pointer-events-none block">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 3 SOROTAN KREDENSIAL UTAMA ==================== -->
+  <section class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
+        <div class="border-l-4 border-brand-600 dark:border-brand-400 pl-4 py-0.5">
+          <div class="text-xl sm:text-2xl font-extrabold font-mono text-slate-900 dark:text-white">S.Tr.T.</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Sarjana Terapan Teknik — Teknologi Rekayasa
+            Internet</div>
+        </div>
+        <div class="border-l-4 border-emerald-500 pl-4 py-0.5">
+          <div class="text-xl sm:text-2xl font-extrabold font-mono text-slate-900 dark:text-white">3.75 <span
+              class="text-sm font-normal text-slate-400">/ 4.00</span></div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">IPK Universitas Gadjah Mada (Predikat Cum
+            Laude)</div>
+        </div>
+        <div class="border-l-4 border-amber-500 pl-4 py-0.5">
+          <div class="text-xl sm:text-2xl font-extrabold font-mono text-slate-900 dark:text-white">MTCNA & BNSP</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Sertifikasi Kompetensi Jaringan Internasional &
+            Nasional</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 01 // PENDIDIKAN ==================== -->
+  <section id="pendidikan"
+    class="py-14 sm:py-16 border-b border-slate-200 dark:border-slate-800/80 bg-slate-50 dark:bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-brand-600 dark:text-brand-400 font-semibold">01 //
+          LATAR BELAKANG AKADEMIK</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Riwayat Pendidikan</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- UGM (Dual Logo Light & Dark Mode) -->
+        <div
+          class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col sm:flex-row items-start gap-4">
+          <div
+            class="w-14 h-14 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 p-2 flex items-center justify-center shrink-0">
+            <!-- Logo UGM Mode Terang -->
+            <img src="assets/img/logos/logo-ugm.svg" alt="UGM" onerror="this.style.display='none'"
+              class="w-full h-full object-contain block dark:hidden">
+            <!-- Logo UGM Mode Gelap (Putih) -->
+            <img src="assets/img/logos/logo-ugm-2.svg" alt="UGM" onerror="this.style.display='none'"
+              class="w-full h-full object-contain hidden dark:block">
+          </div>
+          <div class="flex-1">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs font-mono font-semibold text-brand-600 dark:text-brand-400">Jul 2022 – Jul
+                2026</span>
+              <span
+                class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20">IPK:
+                3.75 / 4.00</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">Universitas Gadjah Mada</h3>
+            <p class="text-sm font-medium text-slate-700 dark:text-slate-200">Diploma IV (Sarjana Terapan) - Teknologi
+              Rekayasa Internet</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+              Bulaksumur, Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281.
+            </p>
+          </div>
+        </div>
+
+        <!-- SMKN 2 Pengasih -->
+        <div
+          class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col sm:flex-row items-start gap-4">
+          <div
+            class="w-14 h-14 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 p-2 flex items-center justify-center shrink-0">
+            <img src="assets/img/logos/logo-smkn2-pengasih.svg" alt="SMK Negeri 2 Pengasih"
+              onerror="this.style.display='none'" class="w-full h-full object-contain">
+          </div>
+          <div class="flex-1">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs font-mono font-semibold text-slate-500 dark:text-slate-400">Jul 2019 – Jul
+                2022</span>
+              <span
+                class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-400 border border-brand-200 dark:border-brand-500/20">Lulusan
+                Terbaik Prodi</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">SMK Negeri 2 Pengasih</h3>
+            <p class="text-sm font-medium text-slate-700 dark:text-slate-200">Teknik Komputer dan Jaringan (TKJ)</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+              Jl. KRT. Kertodiningrat, Margosari, Pengasih, Kabupaten Kulon Progo, DIY 55652.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 02 // PENGALAMAN KERJA & MAGANG ==================== -->
+  <section id="pengalaman"
+    class="py-14 sm:py-16 border-b border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-brand-600 dark:text-brand-400 font-semibold">02 //
+          REKAM JEJAK PROFESIONAL</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Pengalaman Kerja & Magang
+          Industri</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <!-- Kerja 1: PT Angkasa Pura Indonesia -->
+        <div
+          class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-start justify-between gap-3 mb-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 flex items-center justify-center shrink-0">
+                <img src="assets/img/logos/logo-angkasa-pura.svg" alt="PT Angkasa Pura Indonesia"
+                  onerror="this.style.display='none'" class="w-full h-full object-contain">
+              </div>
+              <span
+                class="text-xs font-mono font-medium px-2.5 py-1 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300">Feb
+                2025 – Apr 2025</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">Airport Technology Engineer</h3>
+            <p class="text-xs font-semibold text-brand-600 dark:text-brand-400 mt-0.5">PT Angkasa Pura Indonesia —
+              Bandara Internasional Yogyakarta (YIA)</p>
+            <ul
+              class="mt-4 space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 list-disc list-inside leading-relaxed">
+              <li>Mengoptimalkan sistem navigasi penumpang melalui inovasi berbasis animasi (GIF) pada layar <em>Flight
+                  Information Display System</em> (FIDS).</li>
+              <li>Menyelesaikan kendala teknis jaringan WiFi, perangkat VoIP, dan memelihara sistem operasional TI
+                bandara secara menyeluruh.</li>
+            </ul>
+          </div>
+          <div class="mt-5 pt-3.5 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-slate-400">Kulon Progo, DIY</span>
+            <button type="button" data-lightbox="assets/img/experience/exp-angkasa-pura.webp"
+              data-caption="Airport Technology Engineer di PT Angkasa Pura Indonesia (Bandara Internasional Yogyakarta)"
+              class="lightbox-trigger text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline inline-flex items-center gap-1">
+              <span>Lihat Dokumentasi</span> ↗
+            </button>
+          </div>
+        </div>
+
+        <!-- Kerja 2: PT Qumicon Indonesia -->
+        <div
+          class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-start justify-between gap-3 mb-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 flex items-center justify-center shrink-0">
+                <img src="assets/img/logos/logo-qumicon.svg" alt="PT Qumicon Indonesia"
+                  onerror="this.style.display='none'" class="w-full h-full object-contain">
+              </div>
+              <span
+                class="text-xs font-mono font-medium px-2.5 py-1 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300">Feb
+                2024 – Apr 2024</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">Network Engineer</h3>
+            <p class="text-xs font-semibold text-brand-600 dark:text-brand-400 mt-0.5">PT Qumicon Indonesia</p>
+            <ul
+              class="mt-4 space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 list-disc list-inside leading-relaxed">
+              <li>Mendesain ulang topologi jaringan kantor berskala menengah guna meminimalisasi latensi dan
+                menstabilkan kecepatan akses jaringan.</li>
+              <li>Menyusun dokumentasi teknis infrastruktur jaringan secara komprehensif sebagai pedoman SOP perusahaan.
+              </li>
+            </ul>
+          </div>
+          <div class="mt-5 pt-3.5 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-slate-400">Patangpuluhan, Yogyakarta</span>
+            <button type="button" data-lightbox="assets/img/experience/exp-qumicon.webp"
+              data-caption="Network Engineer di PT Qumicon Indonesia"
+              class="lightbox-trigger text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline inline-flex items-center gap-1">
+              <span>Lihat Dokumentasi</span> ↗
+            </button>
+          </div>
+        </div>
+
+        <!-- Kerja 3: CV Rumah Mesin -->
+        <div
+          class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-start justify-between gap-3 mb-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 flex items-center justify-center shrink-0">
+                <img src="assets/img/logos/logo-rumah-mesin.svg" alt="CV Rumah Mesin"
+                  onerror="this.style.display='none'" class="w-full h-full object-contain">
+              </div>
+              <span
+                class="text-xs font-mono font-medium px-2.5 py-1 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300">Jul
+                2021 – Nov 2021</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">Web & SEO Specialist</h3>
+            <p class="text-xs font-semibold text-brand-600 dark:text-brand-400 mt-0.5">CV Rumah Mesin</p>
+            <ul
+              class="mt-4 space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 list-disc list-inside leading-relaxed">
+              <li>Menerbitkan artikel SEO harian yang terstruktur dan teroptimasi untuk mendongkrak visibilitas situs
+                web perusahaan pada hasil pencarian organik.</li>
+            </ul>
+          </div>
+          <div class="mt-5 pt-3.5 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-slate-400">Bantul, Yogyakarta</span>
+            <button type="button" data-lightbox="assets/img/experience/exp-rumah-mesin.webp"
+              data-caption="Web & SEO Specialist di CV Rumah Mesin"
+              class="lightbox-trigger text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline inline-flex items-center gap-1">
+              <span>Lihat Dokumentasi</span> ↗
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 03 // PROYEK TEKNIS & SOLUSI SISTEM (7 PROYEK KRONOLOGIS) ==================== -->
+  <section id="proyek"
+    class="py-14 sm:py-16 border-b border-slate-200 dark:border-slate-800/80 bg-slate-50 dark:bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-brand-600 dark:text-brand-400 font-semibold">03 //
+          ENGINEERING PORTFOLIO</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Proyek Teknis & Rekayasa Sistem
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">Diurutkan secara kronologis dari pengembangan terbaru.</p>
+      </div>
+
+      <!-- Proyek 1 (Highlight Lebar di Atas): Landing Page Resmi GABSI (gabku.or.id) -->
+      <article
+        class="mb-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm grid grid-cols-1 lg:grid-cols-12">
+        <div
+          class="lg:col-span-5 aspect-video lg:aspect-auto bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none">
+          <img src="assets/img/projects/project-gabku-landing.webp" alt="Landing Page gabku.or.id"
+            class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105 active:scale-[0.98]">
+        </div>
+        <div class="lg:col-span-7 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <span
+                class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-500/20">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
+                On Progress • 2026
+              </span>
+              <span class="text-xs font-mono text-brand-600 dark:text-brand-400 font-semibold">Official Organization
+                Portal</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Portal Web Resmi & Media Promosi
+              Olahraga Bridge (gabku.or.id)</h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Merancang dan mengembangkan halaman <em>landing page</em> resmi untuk Pengurus Kabupaten GABSI Kulon Progo
+              yang akan dipublikasikan pada domain <strong>gabku.or.id</strong>. Berfungsi sebagai pusat informasi
+              publik, publikasi turnamen, pengenalan edukasi olahraga <em>contract bridge</em>, serta etalase digital
+              prestasi atlet daerah.
+            </p>
+          </div>
+          <div
+            class="mt-5 pt-3.5 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Web Development</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Responsive UI/UX</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">gabku.or.id</span>
+            </div>
+            <span class="text-xs font-mono text-slate-400">Arsitektur Web</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 Proyek Berikutnya dalam Grid 3x2 yang Simetris -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Proyek 2: Gabku App & Kas Gabku -->
+        <article
+          class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col">
+          <div class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none">
+            <img src="assets/img/projects/project-gabku-app.webp" alt="Gabku App & Kas Gabku" class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105 active:scale-[0.98]">
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center text-xs font-mono text-slate-400 mb-1.5">
+                <span>Mei 2026</span>
+                <span class="text-purple-600 dark:text-purple-400 font-semibold">Production Web App</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">Gabku App & Kas Gabku (Monitoring Atlet &
+                Keuangan)</h3>
+              <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Pengembangan dua sistem aplikasi terintegrasi sesuai permintaan organisasi: sistem presensi dan
+                pemantauan latihan atlet (<strong>Gabku App</strong>) serta sistem pencatatan arus kas dan pembukuan
+                keuangan organisasi secara transparan (<strong>Kas Gabku</strong>).
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-1.5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Next.js</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Supabase PostgreSQL</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">PWA</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyek 3: Low-Power IoT Greenhouse Monitoring -->
+        <article
+          class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col">
+          <div class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none">
+            <img src="assets/img/projects/project-iot-greenhouse.webp" alt="IoT Greenhouse Monitoring" class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105 active:scale-[0.98]">
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center text-xs font-mono text-slate-400 mb-1.5">
+                <span>Jan – Apr 2026</span>
+                <span class="text-emerald-600 dark:text-emerald-400 font-semibold">UGM • Tugas Akhir</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">Low-Power IoT Greenhouse Monitoring (Batch
+                Processing & Deep Sleep)</h3>
+              <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Sistem monitoring hidroponik NFT end-to-end berbasis ESP32 dengan algoritma <em>Batch Processing</em>,
+                <em>Deep Sleep</em>, dan <em>Force Upload</em> anomali. Memangkas overhead jaringan
+                <strong>81,21%</strong> (uji <em>Python Sniffer</em> di Azure) dan memperpanjang masa pakai baterai
+                <strong>332,47%</strong> (&gt;9 hari).
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-1.5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">ESP32 C++</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Microsoft Azure</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">PHP/MariaDB</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Telegram API</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyek 4: Automated Network Configuration Backup & DR -->
+        <article
+          class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col">
+          <div class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none">
+            <img src="assets/img/projects/project-network-automation.webp" alt="Automated Network Backup" class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105 active:scale-[0.98]">
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center text-xs font-mono text-slate-400 mb-1.5">
+                <span>Des 2025</span>
+                <span class="text-brand-600 dark:text-brand-400 font-semibold">Network Automation</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">Automated Network Configuration Backup &
+                Disaster Recovery</h3>
+              <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Otomatisasi jaringan berbasis Python dan Netmiko pada router virtual Cisco CSR1000v. Mendeteksi
+                perubahan via Cron Job, pencadangan <em>hybrid</em> (Git lokal & GitHub Private), notifikasi Telegram
+                real-time, serta pemulihan (<em>rollback</em>) instan satu klik via Streamlit.
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-1.5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Python Netmiko</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Cisco CSR1000v</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Git & Cron</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Streamlit</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyek 5: Pembaruan Visual Dinamis FIDS Bandara YIA -->
+        <article
+          class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col">
+          <div class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none">
+            <img src="assets/img/projects/project-fids-yia.webp" alt="Pembaruan FIDS YIA" class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105 active:scale-[0.98]">
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center text-xs font-mono text-slate-400 mb-1.5">
+                <span>Apr 2025</span>
+                <span class="text-amber-600 dark:text-amber-400 font-semibold">InJourney Airports</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">Pembaruan Visual Dinamis FIDS Bandara
+                Internasional Yogyakarta</h3>
+              <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Inovasi pembaruan visual pada sistem FIDS Bandara YIA yang mengubah direktori peta terminal statis
+                menjadi visual dinamis dengan penanda lokasi interaktif bergerak (<em>"I'm Here"</em>).
+                Diimplementasikan langsung di area Pax Flow Lorong Malioboro YIA.
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-1.5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">FIDS Display</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Spatial Navigation</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Passenger Flow</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyek 6: LUMIVOX Smart Mini Solar System -->
+        <article
+          class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col">
+          <div class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none">
+            <img src="assets/img/projects/project-lumivox-solar.webp" alt="LUMIVOX Solar System" class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105 active:scale-[0.98]">
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center text-xs font-mono text-slate-400 mb-1.5">
+                <span>Nov – Des 2024</span>
+                <span class="text-brand-600 dark:text-brand-400 font-semibold">Koordinator Tim</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">LUMIVOX: IoT & Voice-Controlled Smart Mini
+                Solar System</h3>
+              <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Sistem PLTS mini <em>off-grid</em> berbasis IoT dan kontrol suara (Panel Surya, SCC, Baterai 12V 10Ah,
+                Inverter 220VAC) dengan mikrokontroler ESP32 untuk kontrol lampu dan pemantauan suhu, kelembapan,
+                cahaya, hujan, serta tegangan secara real-time via smartphone.
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-1.5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">ESP32 IoT</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">PLTS Off-Grid</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Voice Control</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyek 7: Electric Power Recorder -->
+        <article
+          class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col">
+          <div class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none">
+            <img src="assets/img/projects/project-power-recorder.webp" alt="Electric Power Recorder" class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105 active:scale-[0.98]">
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center text-xs font-mono text-slate-400 mb-1.5">
+                <span>Okt – Nov 2023</span>
+                <span class="text-emerald-600 dark:text-emerald-400 font-semibold">Embedded & Data</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">Electric Power Recorder (Arduino & Python
+                Energy Monitoring)</h3>
+              <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Sistem pemantau konsumsi energi listrik rumah tangga menggunakan Arduino Uno dan sensor PZEM-004T via
+                konverter RS485 ke TTL (Modbus) untuk mengukur 6 parameter listrik, logging MicroSD (.csv) dengan RTC
+                DS3231, serta visualisasi Python (Pandas & Matplotlib).
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-1.5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Arduino & Modbus</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">PZEM-004T</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Pandas & Matplotlib</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 04 // KEAHLIAN TEKNIS & KOMPETENSI ==================== -->
+  <section id="keahlian"
+    class="py-14 sm:py-16 border-b border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-brand-600 dark:text-brand-400 font-semibold">04 //
+          TECHNICAL ARSENAL</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Keahlian Teknis & Kompetensi</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-slate-50 dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800">
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+            Jaringan & Infrastruktur
+          </h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-tag">MikroTik RouterOS</span>
+            <span class="skill-tag">Cisco Routing & Switching</span>
+            <span class="skill-tag">OSPF / Static / NAT</span>
+            <span class="skill-tag">EoIP & Bridge Tunneling</span>
+            <span class="skill-tag">Network Security</span>
+            <span class="skill-tag">WiFi & VoIP Troubleshooting</span>
+            <span class="skill-tag">CCTV IP Infrastructure</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800">
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            IoT & Sistem Tertanam
+          </h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-tag">ESP32</span>
+            <span class="skill-tag">Arduino (C++)</span>
+            <span class="skill-tag">Deep Sleep Optimization</span>
+            <span class="skill-tag">Batch Processing Telemetry</span>
+            <span class="skill-tag">RTC (Real-Time Clock)</span>
+            <span class="skill-tag">Off-Grid Solar (PLTS)</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800">
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+            Otomatisasi, Web & Data
+          </h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Automated Network Backup</span>
+            <span class="skill-tag">TCP/HTTP Packet Sniffer</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">Supabase</span>
+            <span class="skill-tag">PHP / Nginx / MariaDB</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800">
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+            IT Support & Soft Skills
+          </h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-tag">Konfigurasi Perangkat Keras</span>
+            <span class="skill-tag">IT Support & Troubleshooting</span>
+            <span class="skill-tag">Microsoft Azure</span>
+            <span class="skill-tag">Penyusunan SOP Jaringan</span>
+            <span class="skill-tag">Pemecahan Masalah & Analisis</span>
+            <span class="skill-tag">Kolaborasi & Kepemimpinan</span>
+            <span class="skill-tag">Manajemen Waktu & Adaptasi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 05 // LISENSI, SERTIFIKASI (2) & KURSUS (18) ==================== -->
+  <section id="sertifikasi"
+    class="py-14 sm:py-16 border-b border-slate-200 dark:border-slate-800/80 bg-slate-50 dark:bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-brand-600 dark:text-brand-400 font-semibold">05 //
+          LISENSI & KREDENSIAL</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Sertifikasi Profesi & Kursus
+          Teknis</h2>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">Klik pada kartu sertifikasi atau kursus
+          mana pun untuk melihat bukti sertifikat ukuran penuh.</p>
+      </div>
+
+      <!-- SUB-BLOK A: 2 SERTIFIKASI UTAMA -->
+      <div class="mb-10">
+        <h3
+          class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-brand-600"></span>
+          Sertifikasi Kompetensi Resmi (2)
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Sertifikasi 1: MTCNA -->
+          <div
+            class="group bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-5 cursor-pointer lightbox-trigger"
+            data-lightbox="assets/img/certificates/cert-mtcna.webp"
+            data-caption="MikroTik Certified Network Associate (MTCNA) — Jan 2026 s.d. 2029">
+            <div
+              class="w-24 sm:w-28 aspect-[3/4] rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shrink-0">
+              <img src="assets/img/certificates/cert-mtcna.webp" alt="MTCNA"
+                class="w-full h-full object-contain p-1 group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="flex-1">
+              <span
+                class="px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400">Jan
+                2026 – 2029</span>
+              <h4
+                class="text-base sm:text-lg font-bold text-slate-900 dark:text-white mt-1.5 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                MikroTik Certified Network Associate (MTCNA)</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Sertifikasi Internasional Pengelolaan &
+                Konfigurasi Jaringan RouterOS MikroTik.</p>
+              <span class="inline-block mt-3 text-xs font-semibold text-brand-600 dark:text-brand-400">Klik untuk lihat
+                sertifikat ↗</span>
+            </div>
+          </div>
+
+          <!-- Sertifikasi 2: BNSP TKJ -->
+          <!-- Sertifikasi 2: BNSP TKJ -->
+          <div
+            class="group bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-5 cursor-pointer lightbox-trigger"
+            data-lightbox="assets/img/certificates/cert-bnsp-tkj.webp"
+            data-caption="Sertifikat Kompetensi Teknik Komputer dan Jaringan — Badan Nasional Sertifikasi Profesi (BNSP)">
+            <div
+              class="w-24 sm:w-28 aspect-[3/4] rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shrink-0">
+              <img src="assets/img/certificates/cert-bnsp-tkj.webp" alt="BNSP TKJ"
+                class="w-full h-full object-contain p-1 group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="flex-1">
+              <span
+                class="px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">Mei
+                2022 – 2025</span>
+              <h4
+                class="text-base sm:text-lg font-bold text-slate-900 dark:text-white mt-1.5 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                Sertifikat Kompetensi Teknik Komputer dan Jaringan</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Badan Nasional Sertifikasi Profesi (BNSP) —
+                Lisensi Nasional Keahlian TKJ.</p>
+              <span class="inline-block mt-3 text-xs font-semibold text-brand-600 dark:text-brand-400">Klik untuk lihat
+                sertifikat ↗</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUB-BLOK B: 18 KURSUS & PELATIHAN TEKNIS -->
+      <div>
+        <h3
+          class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          Pelatihan & Kursus Berjenjang (18 Kursus & Pelatihan)
+        </h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          <!-- 1 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-teal-600 dark:text-teal-400 font-semibold">Sep 2026 • Esri Academy</span>
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
+                GIS Basics (Konsep & Analisis Data Spasial)</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 2 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-teal-600 dark:text-teal-400 font-semibold">Sep 2026 • Esri Academy</span>
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
+                Getting Started with Spatial Data Management</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 3 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-teal-600 dark:text-teal-400 font-semibold">Sep 2026 • Esri Academy</span>
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
+                ArcGIS Pro Basics (Desktop GIS & Pemetaan Digital)</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 4 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold">Sep 2026 •
+                Digital Talent Scholarship</span>
+              <h4
+                class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+                Associate Data Scientist + Python (Nasional)</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 5 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Sep 2026 • Cisco
+                NetAcad</span>
+              <h4
+                class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+                IT Essentials 8 (Hardware, Software, Networking)</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 6 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Sep 2026 • Cisco
+                NetAcad</span>
+              <h4
+                class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+                IT Support Essentials (Path to CCST IT Support)</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 7 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold">Agu 2026 • DTS
+                Micro Skill</span>
+              <h4
+                class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+                Pengenalan Data Science di Berbagai Sektor</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 8 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-amber-600 dark:text-amber-400 font-semibold">Agu 2026 •
+                Simplilearn</span>
+              <h4
+                class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+                Business Analytics with Excel, Docs & Sheet</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 9 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-purple-600 dark:text-purple-400 font-semibold">Agu 2026 • Canva
+                Certification</span>
+              <h4
+                class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+                Canva Visual Suite, Graphic Design & AI Series</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 10 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-red-600 dark:text-red-400 font-semibold">Des 2025 • Huawei ICT
+                Academy</span>
+              <h4
+                class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+                HCIA-Datacom V1.0 Course</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 11 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Okt 2025 • Cisco
+                NetAcad</span>
+              <h4
+                class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+                Network Security</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 12 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Okt 2025 • Cisco
+                NetAcad</span>
+              <h4
+                class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+                DevNet Associate</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 13 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-red-600 dark:text-red-400 font-semibold">Jul 2024 • Huawei ICT
+                Academy</span>
+              <h4
+                class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+                HCIA-Cloud Computing V5.0 Course</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 14 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Jun 2024 • Cisco
+                NetAcad</span>
+              <h4
+                class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+                CyberOps Associate</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 15 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-red-600 dark:text-red-400 font-semibold">Jun 2024 • Huawei ICT
+                Academy</span>
+              <h4
+                class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+                HCIA-AI V3.5 Course</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 16 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Mar 2024 • Cisco
+                NetAcad</span>
+              <h4
+                class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+                Exploring Networking with Cisco Packet Tracer</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 17 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Jul 2023 • Cisco
+                NetAcad</span>
+              <h4
+                class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+                CCNAv7: Switching, Routing, & Wireless Essentials</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+
+          <!-- 18 -->
+          <div class="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3 shadow-sm">
+            <div>
+              <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Des 2022 • Cisco
+                NetAcad</span>
+              <h4
+                class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+                CCNAv7: Introduction to Networks</h4>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">Selesai</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 06 // PENGABDIAN MASYARAKAT & INFRASTRUKTUR LAPANGAN ==================== -->
+  <section id="pengabdian"
+    class="py-14 sm:py-16 border-b border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-brand-600 dark:text-brand-400 font-semibold">06 //
+          VOLUNTEERING & SOCIAL IMPACT</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Pengabdian Masyarakat &
+          Infrastruktur Desa</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Volunteering 1: Bukit Cubung -->
+        <div
+          class="bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col justify-between">
+          <div>
+            <a href="https://tri.sv.ugm.ac.id/pengabdian-dosen-kegiatan-pemeliharaan-perawatan-dan-penambahan-jaringan-cctv-di-kawasan-wisata-bukit-cubung/"
+              target="_blank" rel="noopener" title="Buka Berita Resmi UGM (Kawasan Wisata Bukit Cubung)"
+              class="block aspect-video bg-slate-200 dark:bg-slate-800 relative overflow-hidden group">
+              <img src="assets/img/volunteering/vol-bukit-cubung.webp" alt="CCTV Bukit Cubung"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </a>
+            <div class="p-6">
+              <div
+                class="flex justify-between items-center text-xs font-mono text-brand-600 dark:text-brand-400 mb-1.5">
+                <span>Anggota Tim Pengabdian DTEDI SV UGM</span>
+                <span>Agu 2025</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">Pemeliharaan & Ekspansi Jaringan
+                CCTV Kawasan Wisata Bukit Cubung</h3>
+              <p class="mt-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Memelihara dan mengekspansi infrastruktur digital di Kawasan Wisata Bukit Cubung, Kulon Progo. Melakukan
+                pemeriksaan serta <em>troubleshooting</em> jaringan internet dan perangkat CCTV, hingga merancang dan
+                menginstalasi titik-titik jaringan CCTV baru pada area strategis guna mendukung SDG 9.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-6 pb-5 pt-3 border-t border-slate-200/70 dark:border-slate-800 flex items-center justify-between text-xs font-semibold">
+            <a href="https://tri.sv.ugm.ac.id/pengabdian-dosen-kegiatan-pemeliharaan-perawatan-dan-penambahan-jaringan-cctv-di-kawasan-wisata-bukit-cubung/"
+              target="_blank" rel="noopener" class="text-brand-600 dark:text-brand-400 hover:underline">Baca Berita
+              Resmi UGM →</a>
+            <span class="text-slate-400 font-mono text-[11px]">Buka Berita ↗</span>
+          </div>
+        </div>
+
+        <!-- Volunteering 2: KKN PPM UGM Desa Sidorejo -->
+        <div
+          class="bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col justify-between">
+          <div>
+            <a href="https://sidorejo-kulonprogo.desa.id/artikel/2025/08/04/adaptasi-era-digital-kkn-ugm-bekali-pengelola-website-desa-keterampilan-jurnalistik-berbasis-ai"
+              target="_blank" rel="noopener" title="Buka Berita Kegiatan Transformasi Digital Sidorejo"
+              class="block aspect-video bg-slate-200 dark:bg-slate-800 relative overflow-hidden group">
+              <img src="assets/img/volunteering/vol-kkn-sidorejo.webp" alt="KKN PPM UGM Desa Sidorejo"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </a>
+            <div class="p-6">
+              <div
+                class="flex justify-between items-center text-xs font-mono text-brand-600 dark:text-brand-400 mb-1.5">
+                <span>Anggota Humas • KKN-PPM UGM 2025</span>
+                <span>Jun – Jul 2025</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">Transformasi Digital &
+                Infrastruktur Web Desa Sidorejo</h3>
+              <p class="mt-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Menjalankan 3 pilar digitalisasi desa: <strong>(1) Tata Kelola Web:</strong> Aktivasi web resmi desa,
+                digitalisasi arsip, dan platform panduan perawatan lampu jalan tenaga surya. <strong>(2) Smart
+                  Tourism:</strong> Optimasi Google Maps & sistem informasi QR Code koleksi rempah Museum Pawukon.
+                <strong>(3) Literasi AI:</strong> Pelatihan pemanfaatan AI bagi perangkat desa untuk publikasi berita.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-6 pb-5 pt-3 border-t border-slate-200/70 dark:border-slate-800 flex items-center justify-between text-xs font-semibold">
+            <!-- Ganti URL di bawah ini dengan link berita KKN milikmu -->
+            <a href="https://sidorejo-kulonprogo.desa.id/artikel/2025/08/04/adaptasi-era-digital-kkn-ugm-bekali-pengelola-website-desa-keterampilan-jurnalistik-berbasis-ai"
+              target="_blank" rel="noopener" class="text-brand-600 dark:text-brand-400 hover:underline">Baca Berita
+              Kegiatan →</a>
+            <span class="text-slate-400 font-mono text-[11px]">Buka Berita ↗</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 07 // PRESTASI & PENGHARGAAN ==================== -->
+  <section id="prestasi"
+    class="py-14 sm:py-16 border-b border-slate-200 dark:border-slate-800/80 bg-slate-50 dark:bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-brand-600 dark:text-brand-400 font-semibold">07 //
+          HONORS & AWARDS</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Prestasi & Penghargaan Kompetisi
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Prestasi 1: IONIC 2023 -->
+        <article
+          class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="aspect-[24/17] bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer lightbox-trigger" style="aspect-ratio: 24/17;"
+              data-lightbox="assets/img/awards-org/award-ionic-2023.webp"
+              data-caption="Juara 3 Nasional — Networking Competition IONIC 2023">
+              <img src="assets/img/awards-org/award-ionic-2023.webp" alt="Juara 3 IONIC 2023"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5">
+              <div class="flex justify-between items-center text-xs font-mono mb-2">
+                <span
+                  class="px-2.5 py-0.5 rounded font-semibold bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400">Tingkat
+                  Nasional</span>
+                <span class="text-slate-400">2023</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">Juara 3 — Networking IONIC 2023</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                Penghargaan nasional pada ajang <em>Internet of Things and Networking Competition (IONIC)</em> bidang
+                rekayasa dan penyelesaian masalah jaringan komputer.
+              </p>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-xs">
+              <span class="text-slate-400 font-mono text-[11px]">Sertifikat Resmi</span>
+              <button type="button" data-lightbox="assets/img/awards-org/award-ionic-2023.webp"
+                data-caption="Juara 3 Nasional — Networking Competition IONIC 2023"
+                class="lightbox-trigger font-semibold text-brand-600 dark:text-brand-400 hover:underline inline-flex items-center gap-1">
+                <span>Perbesar Piagam</span> ↗
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Prestasi 2: LBMN 2025 -->
+        <article
+          class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="aspect-[24/17] bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer lightbox-trigger" style="aspect-ratio: 24/17;"
+              data-lightbox="assets/img/awards-org/award-lbmn-2025.webp"
+              data-caption="Finalis Grand Final Liga Bridge Mahasiswa Nasional (LBMN) 2025">
+              <img src="assets/img/awards-org/award-lbmn-2025.webp" alt="Finalis LBMN 2025"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5">
+              <div class="flex justify-between items-center text-xs font-mono mb-2">
+                <span
+                  class="px-2.5 py-0.5 rounded font-semibold bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400">Tingkat
+                  Nasional</span>
+                <span class="text-slate-400">2025</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">Finalis Nasional — Grand Final LBMN 2025</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                Menembus babak Grand Final tingkat nasional pada kejuaraan <em>Liga Bridge Mahasiswa Nasional (LBMN)</em>
+                mewakili Universitas Gadjah Mada.
+              </p>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-xs">
+              <span class="text-slate-400 font-mono text-[11px]">Piagam Penghargaan</span>
+              <button type="button" data-lightbox="assets/img/awards-org/award-lbmn-2025.webp"
+                data-caption="Finalis Grand Final Liga Bridge Mahasiswa Nasional (LBMN) 2025"
+                class="lightbox-trigger font-semibold text-brand-600 dark:text-brand-400 hover:underline inline-flex items-center gap-1">
+                <span>Perbesar Piagam</span> ↗
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Prestasi 3: PORDA DIY 2025 -->
+        <article
+          class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="aspect-[24/17] bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer lightbox-trigger" style="aspect-ratio: 24/17;"
+              data-lightbox="assets/img/awards-org/award-porda-2025.webp"
+              data-caption="Juara 3 Pasangan Putra & Juara 3 Beregu Mix — PORDA DIY 2025">
+              <img src="assets/img/awards-org/award-porda-2025.webp" alt="PORDA DIY 2025"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5">
+              <div class="flex justify-between items-center text-xs font-mono mb-2">
+                <span
+                  class="px-2.5 py-0.5 rounded font-semibold bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">Tingkat
+                  Provinsi DIY</span>
+                <span class="text-slate-400">2025</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">2 Medali Perunggu — PORDA DIY 2025</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                Meraih <strong>Juara 3 Pasangan Putra</strong> dan <strong>Juara 3 Beregu Mix</strong> pada Pekan Olahraga
+                Daerah (PORDA) Daerah Istimewa Yogyakarta 2025.
+              </p>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-xs">
+              <span class="text-slate-400 font-mono text-[11px]">Medali & Piagam</span>
+              <button type="button" data-lightbox="assets/img/awards-org/award-porda-2025.webp"
+                data-caption="Juara 3 Pasangan Putra & Juara 3 Beregu Mix — PORDA DIY 2025"
+                class="lightbox-trigger font-semibold text-brand-600 dark:text-brand-400 hover:underline inline-flex items-center gap-1">
+                <span>Perbesar Piagam</span> ↗
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 08 // ORGANISASI & KEPANITIAAN (DIPISAH 2 SUB-BLOK) ==================== -->
+  <section id="organisasi"
+    class="py-14 sm:py-16 border-b border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-brand-600 dark:text-brand-400 font-semibold">08 //
+          LEADERSHIP & GOVERNANCE</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Pengalaman Organisasi &
+          Kepanitiaan</h2>
+      </div>
+
+      <!-- SUB-BLOK A: PENGALAMAN ORGANISASI -->
+      <div class="mb-10">
+        <h3
+          class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-brand-600"></span>
+          Pengalaman Kepengurusan Organisasi
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Organisasi 1: Sekretaris GABSI Kulon Progo -->
+          <div
+            class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border-l-4 border-l-brand-600 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-start justify-between gap-3 mb-3">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-11 h-11 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-1.5 flex items-center justify-center shrink-0">
+                    <img src="assets/img/logos/logo-gabsi.svg" alt="GABSI" onerror="this.style.display='none'"
+                      class="w-full h-full object-contain">
+                  </div>
+                  <div>
+                    <h4 class="text-base font-bold text-slate-900 dark:text-white">Sekretaris Umum Kabupaten</h4>
+                    <p class="text-xs font-semibold text-brand-600 dark:text-brand-400">Pengurus Kabupaten GABSI Kulon
+                      Progo</p>
+                  </div>
+                </div>
+                <span
+                  class="px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 shrink-0">Aktif
+                  Saat Ini</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Bertanggung jawab atas tata kelola kesekretariatan organisasi tingkat kabupaten, koordinasi turnamen
+                daerah, serta transformasi sistem informasi manajemen atlet menuju PORDA.
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-200/70 dark:border-slate-800 flex justify-between items-center text-xs">
+              <span class="font-mono text-slate-400">Kulon Progo, DIY</span>
+              <button type="button" data-lightbox="assets/img/awards-org/org-gabsi-kp.webp"
+                data-caption="Sekretaris Pengurus Kabupaten GABSI Kulon Progo"
+                class="lightbox-trigger font-semibold text-brand-600 dark:text-brand-400 hover:underline">Lihat
+                Dokumentasi ↗</button>
+            </div>
+          </div>
+
+          <!-- Organisasi 2: UKM Bridge UGM -->
+          <div
+            class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-start justify-between gap-3 mb-3">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-11 h-11 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-1.5 flex items-center justify-center shrink-0">
+                    <img src="assets/img/logos/logo-ugm.svg" alt="UGM" onerror="this.style.display='none'"
+                      class="w-full h-full object-contain block dark:hidden">
+                    <img src="assets/img/logos/logo-ugm-2.svg" alt="UGM" onerror="this.style.display='none'"
+                      class="w-full h-full object-contain hidden dark:block">
+                  </div>
+                  <div>
+                    <h4 class="text-base font-bold text-slate-900 dark:text-white">Koordinator Kerumahtanggaan</h4>
+                    <p class="text-xs font-semibold text-brand-600 dark:text-brand-400">Unit Kegiatan Mahasiswa (UKM)
+                      Bridge UGM</p>
+                  </div>
+                </div>
+                <span class="text-xs font-mono text-slate-500 dark:text-slate-400 shrink-0">Jan 2023 – Jan 2025</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Mengelola inventaris fasilitas sekretariat, kesiapan logistik latihan rutin, serta operasional sarana
+                prasarana kegiatan UKM Bridge di lingkungan Universitas Gadjah Mada.
+              </p>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-slate-200/70 dark:border-slate-800 flex justify-between items-center text-xs">
+              <span class="font-mono text-slate-400">Bulaksumur, Yogyakarta</span>
+              <button type="button" data-lightbox="assets/img/awards-org/org-ukm-bridge.webp"
+                data-caption="Koordinator Kerumahtanggaan UKM Bridge Universitas Gadjah Mada (2023–2025)"
+                class="lightbox-trigger font-semibold text-brand-600 dark:text-brand-400 hover:underline">Lihat
+                Dokumentasi ↗</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUB-BLOK B: PENGALAMAN KEPANITIAAN & PENUGASAN EVENT (6 ITEM INDIVIDUAL) -->
+      <div>
+        <h3
+          class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+          Pengalaman Kepanitiaan & Penugasan Teknis Event (6)
+        </h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Kepanitiaan 1: Asisten Wasit POMDA DIY 2026 -->
+          <div
+            class="bg-slate-50 dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center text-xs font-mono text-brand-600 dark:text-brand-400 mb-1">
+                <span>Tingkat Provinsi</span>
+                <span>Okt 2026</span>
+              </div>
+              <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Asisten Wasit — POMDA DIY 2026
+              </h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Pekan Olahraga Mahasiswa Daerah DIY • Fisipol
+                UGM</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/70 dark:border-slate-800 flex justify-end">
+              <button type="button" data-lightbox="assets/img/awards-org/org-wasit-pomda-2026.webp"
+                data-caption="Asisten Wasit pada Pekan Olahraga Mahasiswa Daerah (POMDA) DIY 2026 di Fisipol UGM"
+                class="lightbox-trigger text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline">Lihat
+                Dokumentasi ↗</button>
+            </div>
+          </div>
+
+          <!-- Kepanitiaan 2: Ketua Pelaksana POMDA DIY 2024 -->
+          <div
+            class="bg-slate-50 dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center text-xs font-mono text-amber-600 dark:text-amber-400 mb-1">
+                <span>The Chief Committee</span>
+                <span>Agu – Okt 2024</span>
+              </div>
+              <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Ketua Pelaksana — POMDA DIY 2024
+              </h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Pekan Olahraga Mahasiswa Daerah DIY 2024</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/70 dark:border-slate-800 flex justify-end">
+              <button type="button" data-lightbox="assets/img/awards-org/org-pomda-diy.webp"
+                data-caption="Ketua Pelaksana (Chief Committee) Pekan Olahraga Mahasiswa Daerah DIY 2024"
+                class="lightbox-trigger text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline">Lihat
+                Dokumentasi ↗</button>
+            </div>
+          </div>
+
+          <!-- Kepanitiaan 3: Gelanggang Expo 2024 -->
+          <div
+            class="bg-slate-50 dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center text-xs font-mono text-slate-500 dark:text-slate-400 mb-1">
+                <span>Event Universitas</span>
+                <span>Jun – Agu 2024</span>
+              </div>
+              <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Panitia UKM — Gelanggang Expo
+                2024</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Universitas Gadjah Mada • Bulaksumur,
+                Yogyakarta</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/70 dark:border-slate-800 flex justify-end">
+              <button type="button" data-lightbox="assets/img/awards-org/org-gelanggang-expo.webp"
+                data-caption="Panitia UKM pada Gelanggang Expo 2024 Universitas Gadjah Mada"
+                class="lightbox-trigger text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline">Lihat
+                Dokumentasi ↗</button>
+            </div>
+          </div>
+
+          <!-- Kepanitiaan 4: Rektor UGM Cup XIII -->
+          <div
+            class="bg-slate-50 dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center text-xs font-mono text-brand-600 dark:text-brand-400 mb-1">
+                <span>Tingkat Nasional</span>
+                <span>Des 2023 – Mei 2024</span>
+              </div>
+              <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Koordinator Perlengkapan —
+                Rektor UGM Cup XIII</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Kejuaraan Tingkat Nasional di UGM • Bulaksumur
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/70 dark:border-slate-800 flex justify-end">
+              <button type="button" data-lightbox="assets/img/awards-org/org-rektor-cup.webp"
+                data-caption="Koordinator Perlengkapan pada Rektor UGM Cup XIII Tingkat Nasional"
+                class="lightbox-trigger text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline">Lihat
+                Dokumentasi ↗</button>
+            </div>
+          </div>
+
+          <!-- Kepanitiaan 5: National Networking Competition 2.0 -->
+          <div
+            class="bg-slate-50 dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <div
+                class="flex justify-between items-center text-xs font-mono text-emerald-600 dark:text-emerald-400 mb-1">
+                <span>Tingkat Nasional</span>
+                <span>Okt 2023 – Feb 2024</span>
+              </div>
+              <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Divisi Networking — National
+                Networking Competition 2.0</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Penyusunan Teknis & Soal Lomba Jaringan
+                Nasional UGM</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/70 dark:border-slate-800 flex justify-end">
+              <button type="button" data-lightbox="assets/img/awards-org/org-netcomp.webp"
+                data-caption="Panitia Divisi Networking pada National Networking Competition (Netcomp) 2.0 UGM"
+                class="lightbox-trigger text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline">Lihat
+                Dokumentasi ↗</button>
+            </div>
+          </div>
+
+          <!-- Kepanitiaan 6: Porsenigama 2023 -->
+          <div
+            class="bg-slate-50 dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center text-xs font-mono text-slate-500 dark:text-slate-400 mb-1">
+                <span>Event Universitas</span>
+                <span>Agu – Nov 2023</span>
+              </div>
+              <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Pancab Perlengkapan —
+                Porsenigama 2023</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Pekan Olahraga dan Seni Universitas Gadjah Mada
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/70 dark:border-slate-800 flex justify-end">
+              <button type="button" data-lightbox="assets/img/awards-org/org-porsenigama.webp"
+                data-caption="Panitia Cabang Perlengkapan pada Porsenigama 2023 UGM"
+                class="lightbox-trigger text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline">Lihat
+                Dokumentasi ↗</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 09 // KONTAK & FOOTER ==================== -->
+  <footer id="kontak" class="relative overflow-hidden border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 py-16 sm:py-20">
+    <!-- Grid Latar Belakang Teknis Halus -->
+    <div class="hero-grid-bg absolute inset-0 pointer-events-none opacity-30 dark:opacity-15"></div>
+
+    <!-- Cahaya Latar Ambient -->
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 sm:w-[600px] h-96 sm:h-[400px] rounded-full bg-gradient-to-tr from-brand-500/10 via-cyan-500/10 to-transparent blur-3xl pointer-events-none">
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <!-- Hub Kolaborasi Card Utama -->
+      <div
+        class="bg-white/85 dark:bg-slate-900/85 backdrop-blur-md rounded-2xl border border-slate-200 dark:border-slate-800 p-7 sm:p-12 shadow-sm text-center">
+        
+        <!-- Status Badge -->
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/25 text-emerald-700 dark:text-emerald-400 font-mono text-[11px] sm:text-xs mb-4">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+          <span>Status: Terbuka untuk Peluang Kerja & Kolaborasi Teknis</span>
+        </div>
+
+        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          Siap Berkontribusi pada Tim Anda
+        </h2>
+
+        <p class="mt-3 text-xs sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Tertarik mendiskusikan peluang karir, rekayasa infrastruktur jaringan, sistem IoT, maupun otomatisasi? Jangan
+          ragu untuk menghubungi saya melalui salah satu saluran di bawah ini.
+        </p>
+
+        <!-- 3 Kartu Saluran Komunikasi Interaktif -->
+        <div class="mt-9 grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
+          
+          <!-- Kartu 1: Email -->
+          <div
+            class="bg-slate-50 dark:bg-slate-950/70 p-6 rounded-xl border border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:border-brand-500 dark:hover:border-brand-400 transition-all duration-200 group">
+            <div>
+              <div
+                class="w-11 h-11 rounded-lg bg-blue-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+              </div>
+              <span class="text-[11px] font-mono font-semibold text-brand-600 dark:text-brand-400">Surel Resmi</span>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mt-1">Kirim Email</h3>
+              <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1 break-all">ahmadzq2004@gmail.com</p>
+            </div>
+            <div class="mt-6 pt-3.5 border-t border-slate-200/70 dark:border-slate-800/80 flex items-center justify-between text-xs">
+              <a href="mailto:ahmadzq2004@gmail.com"
+                class="font-semibold text-brand-600 dark:text-brand-400 hover:underline inline-flex items-center gap-1">
+                <span>Tulis Email</span> ↗
+              </a>
+              <button id="copy-email-btn" type="button"
+                class="font-mono text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 inline-flex items-center gap-1 transition-colors"
+                title="Salin alamat email">
+                <span>Salin</span> 📋
+              </button>
+            </div>
+          </div>
+
+          <!-- Kartu 2: WhatsApp -->
+          <div
+            class="bg-slate-50 dark:bg-slate-950/70 p-6 rounded-xl border border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:border-emerald-500 dark:hover:border-emerald-400 transition-all duration-200 group">
+            <div>
+              <div
+                class="w-11 h-11 rounded-lg bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.188 8.188 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24" />
+                </svg>
+              </div>
+              <span class="text-[11px] font-mono font-semibold text-emerald-600 dark:text-emerald-400">Fast Response</span>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mt-1">WhatsApp Chat</h3>
+              <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1">+62 858-4847-7782</p>
+            </div>
+            <div class="mt-6 pt-3.5 border-t border-slate-200/70 dark:border-slate-800/80 flex items-center justify-between text-xs">
+              <a href="https://wa.me/6285848477782" target="_blank" rel="noopener"
+                class="font-semibold text-emerald-600 dark:text-emerald-400 hover:underline inline-flex items-center gap-1">
+                <span>Mulai Obrolan</span> ↗
+              </a>
+              <span class="font-mono text-slate-400 text-[11px]">Direct Chat</span>
+            </div>
+          </div>
+
+          <!-- Kartu 3: LinkedIn -->
+          <div
+            class="bg-slate-50 dark:bg-slate-950/70 p-6 rounded-xl border border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-200 group">
+            <div>
+              <div
+                class="w-11 h-11 rounded-lg bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                </svg>
+              </div>
+              <span class="text-[11px] font-mono font-semibold text-blue-600 dark:text-blue-400">Jejaring Karir</span>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mt-1">LinkedIn Profile</h3>
+              <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1">in/ahmad-za</p>
+            </div>
+            <div class="mt-6 pt-3.5 border-t border-slate-200/70 dark:border-slate-800/80 flex items-center justify-between text-xs">
+              <a href="https://www.linkedin.com/in/ahmad-za/" target="_blank" rel="noopener"
+                class="font-semibold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
+                <span>Lihat Profil</span> ↗
+              </a>
+              <span class="font-mono text-slate-400 text-[11px]">Connect</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Footer Bar: Hak Cipta, Lokasi & Navigasi Cepat -->
+      <div
+        class="mt-12 pt-8 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+        <div class="flex items-center gap-2">
+          <span class="font-mono font-black text-slate-900 dark:text-white text-sm">A<span class="text-brand-600 dark:text-cyan-400">z</span></span>
+          <span>&copy; 2026 <strong>Ahmad Zainul Qomar, S.Tr.T.</strong> • Kulon Progo, D.I. Yogyakarta</span>
+        </div>
+        <div class="flex flex-wrap justify-center items-center gap-5 font-mono text-[11px]">
+          <a href="https://www.instagram.com/ahhmdzn/" target="_blank" rel="noopener"
+            class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Instagram</a>
+          <a href="mailto:ahmadzainulqomar@mail.ugm.ac.id"
+            class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Email UGM</a>
+          <a href="#" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors flex items-center gap-1">
+            <span>Kembali ke Atas</span> ↑
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL LIGHTBOX GAMBAR & SERTIFIKAT ==================== -->
+  <div id="lightbox-modal"
+    class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6">
+    <div class="relative max-w-5xl w-full flex flex-col items-center">
+      <button id="lightbox-close" type="button" aria-label="Tutup Pratinjau"
+        class="self-end mb-2 px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 hover:bg-red-600 hover:text-white text-xs font-mono transition-colors">
+        ✕ Tutup [ESC]
+      </button>
+      <img id="lightbox-img" src="" alt="Pratinjau Dokumentasi"
+        class="max-h-[85vh] max-w-full w-auto rounded-lg shadow-2xl border border-slate-800 object-contain bg-slate-900">
+      <p id="lightbox-caption" class="mt-3 text-xs sm:text-sm font-mono text-slate-300 text-center max-w-3xl"></p>
+    </div>
+  </div>
+
+  <!-- File JavaScript Kustom -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
