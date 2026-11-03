@@ -64,32 +64,19 @@ html.dark .hero-grid-bg {
     linear-gradient(to bottom, rgba(51, 65, 85, 0.35) 1px, transparent 1px);
 }
 
-/* Foto Profil Cutout (Menempel Rata Bawah & Diperbesar Proporsional) */
+/* Foto Profil Cutout (Menempel Rata Bawah & Proporsional Rapat Kanan) */
 .hero-cutout-img {
   display: block;
   margin-bottom: -1px;
-  /* Menempel presisi di garis bawah section */
-  transform-origin: bottom center;
-  transform: scale(1.12);
-  /* Mengompensasi ruang kosong transparan di tepi kanvas 800x800 */
-  filter: drop-shadow(0 12px 24px rgba(15, 23, 42, 0.15));
+  filter: drop-shadow(0 10px 20px rgba(15, 23, 42, 0.12));
   transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-/* Skala Khusus Layar Desktop (Agar Tinggi Sejajar Blok Teks Kiri) */
-@media (min-width: 1024px) {
-  .hero-cutout-img {
-    transform-origin: bottom right;
-    transform: scale(1.18);
-  }
 }
 
 /* Skala Khusus Layar HP Kecil (Rapi di Tengah Bawah) */
 @media (max-width: 640px) {
   .hero-cutout-img {
-    width: 82vw;
-    max-width: 340px;
-    transform: scale(1.08);
+    width: 74vw;
+    max-width: 310px;
     margin-top: -0.5rem;
   }
 }
