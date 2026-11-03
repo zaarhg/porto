@@ -61,6 +61,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+    /* ==========================================================================
+     NAVBAR CERDAS (AUTO-HIDE SAAT SCROLL KE BAWAH, MUNCUL SAAT SCROLL KE ATAS)
+     ========================================================================== */
+  const header = document.getElementById('main-header');
+  let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollDelta = 8; // Ambang batas toleransi agar tidak flickering saat scroll halus
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Jangan sembunyikan navbar jika menu mobile sedang dibuka pengguna
+    const isMobileMenuOpen = mobileMenu && !mobileMenu.classList.contains('hidden');
+    if (isMobileMenuOpen) {
+      if (header) header.style.transform = 'translateY(0)';
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    // Selalu tampilkan navbar di dekat puncak halaman
+    if (currentScrollY <= 40) {
+      if (header) header.style.transform = 'translateY(0)';
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    // Cek apakah perpindahan melebihi ambang batas delta
+    if (Math.abs(currentScrollY - lastScrollY) < scrollDelta) {
+      return;
+    }
+
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+      // Pengguna scroll ke bawah -> sembunyikan navbar ke atas layar
+      if (header) header.style.transform = 'translateY(-100%)';
+    } else if (currentScrollY < lastScrollY) {
+      // Pengguna scroll ke atas -> munculkan kembali navbar
+      if (header) header.style.transform = 'translateY(0)';
+    }
+
+    lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+  }, { passive: true });
+
+  // Tampilkan navbar saat link anchor diklik
+  const navAnchorLinks = document.querySelectorAll('header a[href^="#"]');
+  navAnchorLinks.forEach((anchor) => {
+    anchor.addEventListener('click', () => {
+      if (header) header.style.transform = 'translateY(0)';
+    });
+  });
+
   /* ==========================================================================
      3. LIGHTBOX MODAL DENGAN FALLBACK OTOMATIS JIKA FILE BELUM ADA
      ========================================================================== */
