@@ -10,11 +10,11 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 4.5rem;
   /* Menjaga judul bagian tidak tertutup sticky navbar */
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Scrollbar Modern Minimalis */
