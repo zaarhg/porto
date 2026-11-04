@@ -55,20 +55,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Tutup menu otomatis saat menyentuh area di luar dropdown
     document.addEventListener('click', (e) => {
-      if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && e.target !== mobileMenuBtn) {
+      if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
         mobileMenu.classList.add('hidden');
       }
     });
   }
 
-    /* ==========================================================================
-     NAVBAR CERDAS (AUTO-HIDE SAAT SCROLL KE BAWAH, MUNCUL SAAT SCROLL KE ATAS)
+  /* ==========================================================================
+     3. NAVBAR CERDAS (AUTO-HIDE SAAT SCROLL & PENGUNCI SAAT KLIK MENU)
      ========================================================================== */
   const header = document.getElementById('main-header');
   let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
-  const scrollDelta = 8; // Ambang batas toleransi agar tidak flickering saat scroll halus
+  const scrollDelta = 8;
+  let isScrollingFromClick = false;
+  let scrollTimeout;
+
+  // Kunci navbar agar tetap tampil saat pengguna mengklik tautan navigasi
+  const navAnchorLinks = document.querySelectorAll('header a[href^="#"]');
+  navAnchorLinks.forEach((anchor) => {
+    anchor.addEventListener('click', () => {
+      isScrollingFromClick = true;
+      if (header) header.style.transform = 'translateY(0)';
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isScrollingFromClick = false;
+        lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+      }, 800);
+    });
+  });
 
   window.addEventListener('scroll', () => {
+    if (isScrollingFromClick) return;
+
     const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
 
     // Jangan sembunyikan navbar jika menu mobile sedang dibuka pengguna
@@ -102,16 +120,47 @@ document.addEventListener('DOMContentLoaded', () => {
     lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
   }, { passive: true });
 
-  // Tampilkan navbar saat link anchor diklik
-  const navAnchorLinks = document.querySelectorAll('header a[href^="#"]');
-  navAnchorLinks.forEach((anchor) => {
-    anchor.addEventListener('click', () => {
-      if (header) header.style.transform = 'translateY(0)';
-    });
-  });
+  /* ==========================================================================
+     4. TRANSISI TOMBOL "HUBUNGI SAYA" DI NAVBAR (KONDISI 1 VS KONDISI 2)
+     ========================================================================== */
+  const heroContactBtn = document.getElementById('hero-contact-btn');
+  const navContactBtn = document.getElementById('nav-contact-btn');
+
+  if (heroContactBtn && navContactBtn) {
+    const showNavContact = () => {
+      navContactBtn.classList.remove('max-w-0', 'opacity-0', 'pointer-events-none', 'ml-0', 'px-0');
+      navContactBtn.classList.add('max-w-[140px]', 'opacity-100', 'pointer-events-auto', 'ml-2.5', 'px-3.5');
+    };
+
+    const hideNavContact = () => {
+      navContactBtn.classList.add('max-w-0', 'opacity-0', 'pointer-events-none', 'ml-0', 'px-0');
+      navContactBtn.classList.remove('max-w-[140px]', 'opacity-100', 'pointer-events-auto', 'ml-2.5', 'px-3.5');
+    };
+
+    const contactObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Kondisi 2: Tombol di Hero sudah terlewati ke atas layar
+          if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+            showNavContact();
+          } else {
+            // Kondisi 1: Pengguna masih berada di area atas / tombol Hero terlihat
+            hideNavContact();
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0,
+        rootMargin: '-64px 0px 0px 0px' // Menyesuaikan tinggi sticky navbar (h-16 / 64px)
+      }
+    );
+
+    contactObserver.observe(heroContactBtn);
+  }
 
   /* ==========================================================================
-     3. LIGHTBOX MODAL DENGAN FALLBACK OTOMATIS JIKA FILE BELUM ADA
+     5. LIGHTBOX MODAL AMAN DARI FALSE ERROR & KONFLIK CLASS
      ========================================================================== */
   const lightboxModal = document.getElementById('lightbox-modal');
   const lightboxImg = document.getElementById('lightbox-img');
@@ -122,15 +171,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const openLightbox = (imgSrc, captionText) => {
     if (!lightboxModal || !lightboxImg) return;
 
-    // Reset tampilan gambar sebelum memuat file baru
     lightboxImg.classList.remove('hidden');
-    lightboxImg.src = imgSrc;
-
     if (lightboxCaption) {
       lightboxCaption.textContent = captionText || '';
     }
 
-    // Pengaman jika file gambar belum dimasukkan ke dalam folder assets
+    // Pasang handler onerror SEBELUM mengatur atribut src
     lightboxImg.onerror = () => {
       lightboxImg.classList.add('hidden');
       if (lightboxCaption) {
@@ -142,14 +188,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
+    lightboxImg.src = imgSrc;
     lightboxModal.classList.remove('hidden');
+    lightboxModal.classList.add('flex');
     document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
     if (!lightboxModal || !lightboxImg) return;
     lightboxModal.classList.add('hidden');
-    lightboxImg.src = '';
+    lightboxModal.classList.remove('flex');
+    // Matikan handler onerror sebelum menghapus src agar tidak memicu error palsu
+    lightboxImg.onerror = null;
+    lightboxImg.removeAttribute('src');
     document.body.style.overflow = '';
   };
 
@@ -183,32 +234,41 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
-     4. PENANGANAN GAMBAR THUMBNAIL KARTU YANG BELUM DIISI
+     6. PENANGANAN GAMBAR THUMBNAIL (TERMASUK YANG GAGAL SEBELUM SCRIPT JALAN)
      ========================================================================== */
   const cardImages = document.querySelectorAll('article img, #pengabdian img, #sertifikasi img');
   cardImages.forEach((img) => {
-    img.addEventListener('error', function () {
-      // Menyembunyikan ikon broken-image pada kartu jika file gambar belum ditaruh
-      this.style.opacity = '0';
-    });
+    const hideBrokenImg = () => {
+      img.style.opacity = '0';
+    };
+    img.addEventListener('error', hideBrokenImg);
+    if (img.complete && img.naturalWidth === 0) {
+      hideBrokenImg();
+    }
   });
+
   /* ==========================================================================
-     5. FITUR SALIN EMAIL & NOMOR KE CLIPBOARD
+     7. FITUR SALIN EMAIL & NOMOR KE CLIPBOARD (ANTI-MACET SAAT KLIK CEPAT)
      ========================================================================== */
   const setupCopyBtn = (btnId, textToCopy) => {
     const btn = document.getElementById(btnId);
     if (!btn) return;
+
+    // Simpan teks asli di luar event click dan siapkan timer
+    const originalHTML = btn.innerHTML;
+    let copyTimeout;
+
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       navigator.clipboard.writeText(textToCopy).then(() => {
-        const originalHTML = btn.innerHTML;
+        clearTimeout(copyTimeout);
         btn.innerHTML = '<span>Tersalin!</span> ✓';
         btn.classList.add('text-emerald-500', 'font-semibold');
-        setTimeout(() => {
+        copyTimeout = setTimeout(() => {
           btn.innerHTML = originalHTML;
           btn.classList.remove('text-emerald-500', 'font-semibold');
         }, 2000);
-      }).catch(err => {
+      }).catch((err) => {
         console.error('Gagal menyalin:', err);
       });
     });

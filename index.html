@@ -19,6 +19,19 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
+  <!-- Pencegahan Flash of Unstyled Content (FOUC) Mode Gelap -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('color-theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -77,10 +90,10 @@
         <a href="#organisasi" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Organisasi</a>
       </nav>
 
-      <!-- Aksi Kanan: Toggle Tema & Tombol Kontak -->
-      <div class="flex items-center gap-2.5">
+      <!-- Aksi Kanan: Toggle Tema (Paling Kanan di Kondisi 1, Bergeser ke Kiri di Kondisi 2) -->
+      <div class="flex items-center">
         <button id="theme-toggle" type="button" aria-label="Ganti Mode Warna"
-          class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:border-brand-500 dark:hover:border-brand-400 transition-all">
+          class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:border-brand-500 dark:hover:border-brand-400 transition-all duration-300">
           <svg id="theme-toggle-light-icon" class="hidden w-4 h-4 text-amber-400" fill="currentColor"
             viewBox="0 0 20 20">
             <path
@@ -93,14 +106,15 @@
           </svg>
         </button>
 
-        <a href="#kontak"
-          class="hidden sm:inline-flex items-center px-3.5 py-2 rounded-lg text-xs font-semibold bg-brand-600 hover:bg-brand-700 text-white shadow-sm transition-colors">
+        <!-- Tombol Kontak Navbar (Tersembunyi di Kondisi 1, Muncul di Kanan pada Kondisi 2) -->
+        <a id="nav-contact-btn" href="#kontak"
+          class="hidden sm:inline-flex items-center overflow-hidden whitespace-nowrap rounded-lg text-xs font-semibold bg-brand-600 hover:bg-brand-700 text-white shadow-sm transition-all duration-300 ease-out max-w-0 opacity-0 pointer-events-none ml-0 px-0 py-2">
           Hubungi Saya
         </a>
 
         <!-- Tombol Menu Mobile -->
         <button id="mobile-menu-btn" type="button" aria-label="Buka Menu"
-          class="lg:hidden p-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300">
+          class="lg:hidden ml-2.5 p-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -142,83 +156,72 @@
     </div>
   </header>
 
-  <!-- ==================== HERO SECTION (CUTOUT BESAR TANPA BINGKAI) ==================== -->
-  <section id="hero"
-    class="relative overflow-hidden border-b border-slate-200 dark:border-slate-800 bg-gradient-to-b from-slate-100/70 via-slate-50 to-white dark:from-slate-900/60 dark:via-slate-950 dark:to-slate-950 pt-10 sm:pt-14 lg:pt-16">
-    <!-- Pola Grid Teknis Halus di Latar Belakang -->
+  <!-- ==================== HERO SECTION (CUTOUT PROPORSIONAL TANPA BINGKAI) ==================== -->
+  <section
+    class="relative overflow-hidden border-b border-slate-200 dark:border-slate-800 bg-gradient-to-b from-slate-100/80 to-white dark:from-slate-900/60 dark:to-slate-950 pt-8 sm:pt-10 lg:pt-10">
     <div class="hero-grid-bg absolute inset-0 pointer-events-none opacity-45 dark:opacity-20"></div>
 
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-end">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-end">
 
-        <!-- Kolom Kiri: Teks & CTA Utama -->
-        <div class="lg:col-span-7 pb-8 lg:pb-14 text-left">
-          <!-- Status Badge -->
+        <!-- Kolom Kiri: Teks & CTA (Rata Tengah Vertikal di Desktop) -->
+        <div class="lg:col-span-7 pb-6 lg:pb-8 lg:self-center text-left">
           <div
-            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs mb-5 shadow-2xs">
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 border border-brand-200 dark:border-brand-500/30 text-brand-700 dark:text-brand-400 font-mono text-[11px] sm:text-xs mb-4">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
-            <span>Kulon Progo, D.I. Yogyakarta • Ready to Work</span>
+            <span>Open to Work — Network, Infrastructure & IoT</span>
           </div>
 
-          <!-- Nama Lengkap & Gelar (1 Baris Utuh di Desktop & Tablet) -->
           <h1
-            class="text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.18] whitespace-normal sm:whitespace-nowrap">
+            class="text-2xl sm:text-3xl md:text-4xl lg:text-[36px] xl:text-[42px] font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight whitespace-normal xl:whitespace-nowrap">
             Ahmad Zainul Qomar, <span class="text-brand-600 dark:text-brand-400">S.Tr.T.</span>
           </h1>
 
-          <!-- Peran Utama -->
-          <p class="mt-2.5 text-base sm:text-lg lg:text-xl font-semibold text-brand-600 dark:text-brand-400 font-mono">
+          <p class="mt-2.5 text-base sm:text-lg lg:text-xl font-semibold text-slate-700 dark:text-slate-200 font-mono">
             IoT & Network Engineer
           </p>
 
-          <!-- Bio Profil Ringkas & Berbobot -->
-          <p class="mt-4 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
-            Lulusan Sarjana Terapan, Teknologi Rekayasa Internet, <strong>Universitas Gadjah Mada (IPK 3,75/4,00)</strong> dengan pengalaman kerja di lingkungan <strong>operasional bandara</strong> dan <strong>infrastruktur jaringan</strong>. Terbiasa memecahkan masalah teknis secara sistematis, menyusun dokumentasi yang rapi, dan membangun solusi berbasis teknologi dari perancangan hingga implementasi.
+          <p class="mt-4 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+            Lulusan Sarjana Terapan, Teknologi Rekayasa Internet, <strong>Universitas Gadjah Mada (IPK
+              3,75/4,00)</strong> dengan pengalaman kerja di lingkungan <strong>operasional bandara</strong> dan
+            <strong>infrastruktur jaringan</strong>. Terbiasa memecahkan masalah teknis secara sistematis, menyusun
+            dokumentasi yang rapi, dan membangun solusi berbasis teknologi dari perancangan hingga implementasi. Mudah
+            beradaptasi, serta berpengalaman memimpin tim dan mengelola kegiatan berskala nasional.
           </p>
 
-          <!-- Tombol Aksi Utama -->
-          <div class="mt-7 flex flex-wrap items-center gap-3.5">
+          <!-- Tombol Aksi Utama (Unduh CV & Hubungi Saya) -->
+          <div class="mt-7 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <a href="assets/docs/cv-ahmad-zainul-qomar.pdf" download
-              class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-sm transition-all hover:shadow hover:-translate-y-0.5">
+              class="inline-flex justify-center items-center gap-2 px-5 py-3 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-sm transition-all">
               <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
               </svg>
               <span>Unduh CV (PDF)</span>
             </a>
-            <a href="#proyek"
-              class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-brand-500 dark:hover:border-brand-400 text-slate-700 dark:text-slate-200 font-semibold text-sm transition-all hover:-translate-y-0.5">
-              <span>Eksplorasi Proyek Teknis</span>
-              <span class="text-brand-600 dark:text-brand-400">→</span>
+            <a id="hero-contact-btn" href="#kontak"
+              class="inline-flex justify-center items-center gap-2 px-5 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-brand-500 dark:hover:border-brand-400 text-slate-700 dark:text-slate-200 font-semibold text-sm transition-all">
+              <svg class="w-4 h-4 shrink-0 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                </path>
+              </svg>
+              <span>Hubungi Saya</span>
             </a>
           </div>
-
-          <!-- Ruang Kosong (Placeholder Area Sementara) -->
-          <div class="mt-8 min-h-[56px] sm:min-h-[72px]" aria-hidden="true"></div>
         </div>
 
-        <!-- Kolom Kanan: Foto Profil Cutout Proporsional & Rapat Kanan -->
-        <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-end self-end pt-4 lg:pt-0">
+        <!-- Kolom Kanan: Foto Profil Cutout Proporsional Tanpa Bingkai -->
+        <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-end self-end pt-2 lg:pt-0">
           <!-- Cahaya Latar Halus di Belakang Foto -->
           <div
-            class="absolute bottom-4 right-0 sm:right-4 w-72 h-72 sm:w-80 sm:h-80 lg:w-[420px] lg:h-[420px] rounded-full bg-gradient-to-tr from-brand-500/20 via-cyan-400/15 to-transparent blur-3xl pointer-events-none">
+            class="absolute bottom-0 w-72 h-72 sm:w-80 sm:h-80 lg:w-[390px] lg:h-[390px] rounded-full bg-gradient-to-tr from-brand-500/25 via-cyan-400/15 to-transparent blur-3xl pointer-events-none">
           </div>
 
-          <!-- Floating Badge: Kredensial UGM (Menghubungkan ruang visual & estetika modern) -->
-          <div
-            class="hidden sm:flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-lg absolute top-8 -left-4 lg:-left-10 z-20 pointer-events-none select-none">
-            <div class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center shrink-0">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
-            </div>
-            <div class="text-left">
-              <div class="text-[10px] font-mono text-slate-400 dark:text-slate-500 uppercase tracking-wider">Universitas Gadjah Mada</div>
-              <div class="text-xs font-bold text-slate-900 dark:text-white">IPK 3.75 • Cum Laude</div>
-            </div>
-          </div>
-
-          <!-- Gambar Cutout Transparan (Ukuran Proporsional & Rapat ke Kanan) -->
+          <!-- Gambar Cutout Transparan (Disesuaikan agar Quick Credentials Bar Terlihat Utuh) -->
           <img src="assets/img/profile.webp" alt="Ahmad Zainul Qomar, S.Tr.T."
-            class="hero-cutout-img relative z-10 w-72 sm:w-88 lg:w-[450px] xl:w-[490px] max-w-none h-auto object-contain select-none pointer-events-none block lg:translate-x-8 xl:translate-x-12">
+            class="hero-cutout-img relative z-10 w-72 sm:w-80 lg:w-[420px] xl:w-[460px] max-w-none h-auto object-contain select-none pointer-events-none block">
         </div>
 
       </div>
@@ -444,14 +447,16 @@
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Proyek Teknis & Rekayasa Sistem
         </h2>
         <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">Diurutkan secara kronologis dari
-          pengembangan terbaru.</p>
+          pengembangan terbaru. Klik gambar proyek untuk melihat pratinjau penuh.</p>
       </div>
 
       <!-- Proyek 1 (Highlight Lebar di Atas): Landing Page Resmi GABSI (gabku.or.id) -->
       <article
         class="mb-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm grid grid-cols-1 lg:grid-cols-12">
         <div
-          class="lg:col-span-5 aspect-video lg:aspect-auto bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none">
+          class="lg:col-span-5 aspect-video lg:aspect-auto bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none lightbox-trigger"
+          data-lightbox="assets/img/projects/project-gabku-landing.webp"
+          data-caption="Freelance - Portal Web Resmi & Media Promosi Olahraga Bridge (gabku.or.id)">
           <img src="assets/img/projects/project-gabku-landing.webp" alt="Landing Page gabku.or.id"
             class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105 active:scale-[0.98]">
         </div>
@@ -467,8 +472,7 @@
                 Portal</span>
             </div>
             <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Freelance - Portal Web Resmi & Media
-              Promosi
-              Olahraga Bridge (gabku.or.id)</h3>
+              Promosi Olahraga Bridge (gabku.or.id)</h3>
             <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
               Merancang dan mengembangkan halaman <em>landing page</em> resmi untuk Pengurus Kabupaten GABSI Kulon Progo
               yang akan dipublikasikan pada domain <strong>gabku.or.id</strong>. Berfungsi sebagai pusat informasi
@@ -494,7 +498,10 @@
         <!-- Proyek 2: Gabku App & Kas Gabku -->
         <article
           class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col">
-          <div class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none">
+          <div
+            class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none lightbox-trigger"
+            data-lightbox="assets/img/projects/project-gabku-app.webp"
+            data-caption="Freelance - Gabku App & Kas Gabku (Monitoring Atlet & Keuangan)">
             <img src="assets/img/projects/project-gabku-app.webp" alt="Gabku App & Kas Gabku"
               class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105 active:scale-[0.98]">
           </div>
@@ -505,8 +512,7 @@
                 <span class="text-purple-600 dark:text-purple-400 font-semibold">Production Web App</span>
               </div>
               <h3 class="text-base font-bold text-slate-900 dark:text-white">Freelance - Gabku App & Kas Gabku
-                (Monitoring Atlet &
-                Keuangan)</h3>
+                (Monitoring Atlet & Keuangan)</h3>
               <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 Pengembangan dua sistem aplikasi terintegrasi sesuai permintaan organisasi: sistem presensi dan
                 pemantauan latihan atlet (<strong>Gabku App</strong>) serta sistem pencatatan arus kas dan pembukuan
@@ -525,7 +531,10 @@
         <!-- Proyek 3: Low-Power IoT Greenhouse Monitoring -->
         <article
           class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col">
-          <div class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none">
+          <div
+            class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none lightbox-trigger"
+            data-lightbox="assets/img/projects/project-iot-greenhouse.webp"
+            data-caption="Low-Power IoT Greenhouse Monitoring (Batch Processing & Deep Sleep)">
             <img src="assets/img/projects/project-iot-greenhouse.webp" alt="IoT Greenhouse Monitoring"
               class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105 active:scale-[0.98]">
           </div>
@@ -557,7 +566,10 @@
         <!-- Proyek 4: Automated Network Configuration Backup & DR -->
         <article
           class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col">
-          <div class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none">
+          <div
+            class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none lightbox-trigger"
+            data-lightbox="assets/img/projects/project-network-automation.webp"
+            data-caption="Automated Network Configuration Backup & Disaster Recovery">
             <img src="assets/img/projects/project-network-automation.webp" alt="Automated Network Backup"
               class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105 active:scale-[0.98]">
           </div>
@@ -588,7 +600,10 @@
         <!-- Proyek 5: Pembaruan Visual Dinamis FIDS Bandara YIA -->
         <article
           class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col">
-          <div class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none">
+          <div
+            class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none lightbox-trigger"
+            data-lightbox="assets/img/projects/project-fids-yia.webp"
+            data-caption="Pembaruan Visual Dinamis FIDS Bandara Internasional Yogyakarta">
             <img src="assets/img/projects/project-fids-yia.webp" alt="Pembaruan FIDS YIA"
               class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105 active:scale-[0.98]">
           </div>
@@ -618,7 +633,10 @@
         <!-- Proyek 6: LUMIVOX Smart Mini Solar System -->
         <article
           class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col">
-          <div class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none">
+          <div
+            class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none lightbox-trigger"
+            data-lightbox="assets/img/projects/project-lumivox-solar.webp"
+            data-caption="LUMIVOX: IoT & Voice-Controlled Smart Mini Solar System">
             <img src="assets/img/projects/project-lumivox-solar.webp" alt="LUMIVOX Solar System"
               class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105 active:scale-[0.98]">
           </div>
@@ -648,7 +666,10 @@
         <!-- Proyek 7: Electric Power Recorder -->
         <article
           class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col">
-          <div class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none">
+          <div
+            class="aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer select-none lightbox-trigger"
+            data-lightbox="assets/img/projects/project-power-recorder.webp"
+            data-caption="Electric Power Recorder (Arduino & Python Energy Monitoring)">
             <img src="assets/img/projects/project-power-recorder.webp" alt="Electric Power Recorder"
               class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105 active:scale-[0.98]">
           </div>
@@ -803,7 +824,6 @@
           </div>
 
           <!-- Sertifikasi 2: BNSP TKJ -->
-          <!-- Sertifikasi 2: BNSP TKJ -->
           <div
             class="group bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-5 cursor-pointer lightbox-trigger"
             data-lightbox="assets/img/certificates/cert-bnsp-tkj.webp"
@@ -883,7 +903,7 @@
             <div>
               <span class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold">Sep 2026 •
                 Digital Talent Scholarship</span>
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                 Associate Data Scientist + Python (Nasional)</h4>
             </div>
             <span
@@ -896,7 +916,7 @@
             <div>
               <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Sep 2026 • Cisco
                 NetAcad</span>
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                 IT Essentials 8 (Hardware, Software, Networking)</h4>
             </div>
             <span
@@ -909,7 +929,7 @@
             <div>
               <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Sep 2026 • Cisco
                 NetAcad</span>
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                 IT Support Essentials (Path to CCST IT Support)</h4>
             </div>
             <span
@@ -922,7 +942,7 @@
             <div>
               <span class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold">Agu 2026 • DTS
                 Micro Skill</span>
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                 Pengenalan Data Science di Berbagai Sektor</h4>
             </div>
             <span
@@ -935,7 +955,7 @@
             <div>
               <span class="text-[11px] font-mono text-amber-600 dark:text-amber-400 font-semibold">Agu 2026 •
                 Simplilearn</span>
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                 Business Analytics with Excel, Docs & Sheet</h4>
             </div>
             <span
@@ -948,7 +968,7 @@
             <div>
               <span class="text-[11px] font-mono text-purple-600 dark:text-purple-400 font-semibold">Agu 2026 • Canva
                 Certification</span>
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                 Canva Visual Suite, Graphic Design & AI Series</h4>
             </div>
             <span
@@ -961,7 +981,7 @@
             <div>
               <span class="text-[11px] font-mono text-red-600 dark:text-red-400 font-semibold">Des 2025 • Huawei ICT
                 Academy</span>
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                 HCIA-Datacom V1.0 Course</h4>
             </div>
             <span
@@ -974,7 +994,7 @@
             <div>
               <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Okt 2025 • Cisco
                 NetAcad</span>
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                 Network Security</h4>
             </div>
             <span
@@ -987,7 +1007,7 @@
             <div>
               <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Okt 2025 • Cisco
                 NetAcad</span>
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                 DevNet Associate</h4>
             </div>
             <span
@@ -1000,7 +1020,7 @@
             <div>
               <span class="text-[11px] font-mono text-red-600 dark:text-red-400 font-semibold">Jul 2024 • Huawei ICT
                 Academy</span>
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                 HCIA-Cloud Computing V5.0 Course</h4>
             </div>
             <span
@@ -1013,7 +1033,7 @@
             <div>
               <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Jun 2024 • Cisco
                 NetAcad</span>
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                 CyberOps Associate</h4>
             </div>
             <span
@@ -1026,7 +1046,7 @@
             <div>
               <span class="text-[11px] font-mono text-red-600 dark:text-red-400 font-semibold">Jun 2024 • Huawei ICT
                 Academy</span>
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                 HCIA-AI V3.5 Course</h4>
             </div>
             <span
@@ -1039,7 +1059,7 @@
             <div>
               <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Mar 2024 • Cisco
                 NetAcad</span>
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                 Exploring Networking with Cisco Packet Tracer</h4>
             </div>
             <span
@@ -1052,7 +1072,7 @@
             <div>
               <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Jul 2023 • Cisco
                 NetAcad</span>
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                 CCNAv7: Switching, Routing, & Wireless Essentials</h4>
             </div>
             <span
@@ -1065,7 +1085,7 @@
             <div>
               <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Des 2022 • Cisco
                 NetAcad</span>
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5 ">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                 CCNAv7: Introduction to Networks</h4>
             </div>
             <span
@@ -1152,7 +1172,6 @@
           </div>
           <div
             class="px-6 pb-5 pt-3 border-t border-slate-200/70 dark:border-slate-800 flex items-center justify-between text-xs font-semibold">
-            <!-- Ganti URL di bawah ini dengan link berita KKN milikmu -->
             <a href="https://sidorejo-kulonprogo.desa.id/artikel/2025/08/04/adaptasi-era-digital-kkn-ugm-bekali-pengelola-website-desa-keterampilan-jurnalistik-berbasis-ai"
               target="_blank" rel="noopener" class="text-brand-600 dark:text-brand-400 hover:underline">Baca Berita
               Kegiatan →</a>
@@ -1181,7 +1200,7 @@
           class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col justify-between">
           <div>
             <div class="aspect-[24/17] bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer lightbox-trigger"
-              style="aspect-ratio: 24/17;" data-lightbox="assets/img/awards-org/award-ionic-2023.webp"
+              data-lightbox="assets/img/awards-org/award-ionic-2023.webp"
               data-caption="Juara 3 Nasional — Networking Competition IONIC 2023">
               <img src="assets/img/awards-org/award-ionic-2023.webp" alt="Juara 3 IONIC 2023"
                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
@@ -1217,7 +1236,7 @@
           class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col justify-between">
           <div>
             <div class="aspect-[24/17] bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer lightbox-trigger"
-              style="aspect-ratio: 24/17;" data-lightbox="assets/img/awards-org/award-lbmn-2025.webp"
+              data-lightbox="assets/img/awards-org/award-lbmn-2025.webp"
               data-caption="Finalis Grand Final Liga Bridge Mahasiswa Nasional (LBMN) 2025">
               <img src="assets/img/awards-org/award-lbmn-2025.webp" alt="Finalis LBMN 2025"
                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
@@ -1255,7 +1274,7 @@
           class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col justify-between">
           <div>
             <div class="aspect-[24/17] bg-slate-100 dark:bg-slate-800 overflow-hidden cursor-pointer lightbox-trigger"
-              style="aspect-ratio: 24/17;" data-lightbox="assets/img/awards-org/award-porda-2025.webp"
+              data-lightbox="assets/img/awards-org/award-porda-2025.webp"
               data-caption="Juara 3 Pasangan Putra & Juara 3 Beregu Mix — PORDA DIY 2025">
               <img src="assets/img/awards-org/award-porda-2025.webp" alt="PORDA DIY 2025"
                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
@@ -1536,8 +1555,7 @@
         <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2 max-w-2xl leading-relaxed">
           Saya sedang membuka diri untuk peluang pekerjaan di bidang Network Engineering, IT Infrastructure, maupun IT
           Support. Jika tim Anda sedang mencari rekan kerja baru yang tekun dan siap terjun menangani kebutuhan teknis
-          di
-          lapangan, silakan hubungi saya kapan saja melalui kontak di bawah ini.
+          di lapangan, silakan hubungi saya kapan saja melalui kontak di bawah ini.
         </p>
       </div>
 
@@ -1711,7 +1729,7 @@
 
   <!-- ==================== MODAL LIGHTBOX GAMBAR & SERTIFIKAT ==================== -->
   <div id="lightbox-modal"
-    class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6">
+    class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-sm items-center justify-center p-3 sm:p-6">
     <div class="relative max-w-5xl w-full flex flex-col items-center">
       <button id="lightbox-close" type="button" aria-label="Tutup Pratinjau"
         class="self-end mb-2 px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 hover:bg-red-600 hover:text-white text-xs font-mono transition-colors">
