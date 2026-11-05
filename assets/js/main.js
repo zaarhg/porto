@@ -160,20 +160,45 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     5. LIGHTBOX MODAL AMAN DARI FALSE ERROR & KONFLIK CLASS
+     5. LIGHTBOX MODAL (MENDUKUNG GAMBAR TUNGGAL & SLIDER KLASTER KURSUS)
      ========================================================================== */
   const lightboxModal = document.getElementById('lightbox-modal');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
   const lightboxClose = document.getElementById('lightbox-close');
-  const triggers = document.querySelectorAll('.lightbox-trigger');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+  const lightboxCounter = document.getElementById('lightbox-counter');
 
-  const openLightbox = (imgSrc, captionText) => {
-    if (!lightboxModal || !lightboxImg) return;
+  const singleTriggers = document.querySelectorAll('.lightbox-trigger');
+  const galleryTriggers = document.querySelectorAll('.lightbox-gallery-trigger');
+
+  let currentGallery = [];
+  let currentIndex = 0;
+
+  const renderLightboxSlide = () => {
+    if (!lightboxModal || !lightboxImg || currentGallery.length === 0) return;
+
+    const currentItem = currentGallery[currentIndex];
+    const totalItems = currentGallery.length;
+
+    // Atur visibilitas tombol geser & indikator jumlah sertifikat
+    if (totalItems > 1) {
+      if (lightboxPrev) lightboxPrev.classList.remove('hidden');
+      if (lightboxNext) lightboxNext.classList.remove('hidden');
+      if (lightboxCounter) {
+        lightboxCounter.textContent = `Sertifikat ${currentIndex + 1} / ${totalItems}`;
+        lightboxCounter.classList.remove('hidden');
+      }
+    } else {
+      if (lightboxPrev) lightboxPrev.classList.add('hidden');
+      if (lightboxNext) lightboxNext.classList.add('hidden');
+      if (lightboxCounter) lightboxCounter.classList.add('hidden');
+    }
 
     lightboxImg.classList.remove('hidden');
     if (lightboxCaption) {
-      lightboxCaption.textContent = captionText || '';
+      lightboxCaption.textContent = currentItem.caption || '';
     }
 
     // Pasang handler onerror SEBELUM mengatur atribut src
@@ -182,13 +207,20 @@ document.addEventListener('DOMContentLoaded', () => {
       if (lightboxCaption) {
         lightboxCaption.innerHTML = `
           <span class="block text-amber-400 font-semibold mb-1">Berkas gambar belum tersedia di folder:</span>
-          <code class="px-2 py-1 rounded bg-slate-800 text-slate-300 text-xs">${imgSrc}</code>
-          <span class="block mt-2 text-slate-400">${captionText || ''}</span>
+          <code class="px-2 py-1 rounded bg-slate-800 text-slate-300 text-xs">${currentItem.src}</code>
+          <span class="block mt-2 text-slate-300 font-semibold">${currentItem.caption || ''}</span>
         `;
       }
     };
 
-    lightboxImg.src = imgSrc;
+    lightboxImg.src = currentItem.src;
+  };
+
+  const openLightboxGallery = (items, startIndex = 0) => {
+    if (!lightboxModal || !items || items.length === 0) return;
+    currentGallery = items;
+    currentIndex = startIndex;
+    renderLightboxSlide();
     lightboxModal.classList.remove('hidden');
     lightboxModal.classList.add('flex');
     document.body.style.overflow = 'hidden';
@@ -198,26 +230,63 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!lightboxModal || !lightboxImg) return;
     lightboxModal.classList.add('hidden');
     lightboxModal.classList.remove('flex');
-    // Matikan handler onerror sebelum menghapus src agar tidak memicu error palsu
     lightboxImg.onerror = null;
     lightboxImg.removeAttribute('src');
+    currentGallery = [];
+    currentIndex = 0;
     document.body.style.overflow = '';
   };
 
-  triggers.forEach((trigger) => {
+  const showPrevSlide = (e) => {
+    if (e) e.stopPropagation();
+    if (currentGallery.length <= 1) return;
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    renderLightboxSlide();
+  };
+
+  const showNextSlide = (e) => {
+    if (e) e.stopPropagation();
+    if (currentGallery.length <= 1) return;
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    renderLightboxSlide();
+  };
+
+  // Trigger untuk gambar tunggal (Pengalaman, Proyek, Sertifikasi Utama, Prestasi, Organisasi)
+  singleTriggers.forEach((trigger) => {
     trigger.addEventListener('click', (e) => {
       e.preventDefault();
       const imgSrc = trigger.getAttribute('data-lightbox');
       const captionText = trigger.getAttribute('data-caption');
       if (imgSrc) {
-        openLightbox(imgSrc, captionText);
+        openLightboxGallery([{ src: imgSrc, caption: captionText }], 0);
       }
     });
   });
 
-  if (lightboxClose) {
-    lightboxClose.addEventListener('click', closeLightbox);
-  }
+  // Trigger untuk 6 Keping Klaster Kursus (Multi-Slide — Bisa Di-disable via data-gallery-disabled="true")
+  galleryTriggers.forEach((trigger) => {
+    // Jika masih di-disable, jangan aktifkan klik pop-up
+    if (trigger.getAttribute('data-gallery-disabled') === 'true') return;
+
+    trigger.classList.add('cursor-pointer');
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const rawGallery = trigger.getAttribute('data-gallery');
+      if (!rawGallery) return;
+      try {
+        const parsedGallery = JSON.parse(rawGallery);
+        if (Array.isArray(parsedGallery) && parsedGallery.length > 0) {
+          openLightboxGallery(parsedGallery, 0);
+        }
+      } catch (err) {
+        console.error('Format data-gallery tidak valid:', err);
+      }
+    });
+  });
+
+  if (lightboxPrev) lightboxPrev.addEventListener('click', showPrevSlide);
+  if (lightboxNext) lightboxNext.addEventListener('click', showNextSlide);
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
 
   if (lightboxModal) {
     lightboxModal.addEventListener('click', (e) => {
@@ -228,8 +297,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightboxModal && !lightboxModal.classList.contains('hidden')) {
+    if (!lightboxModal || lightboxModal.classList.contains('hidden')) return;
+    if (e.key === 'Escape') {
       closeLightbox();
+    } else if (e.key === 'ArrowLeft') {
+      showPrevSlide();
+    } else if (e.key === 'ArrowRight') {
+      showNextSlide();
     }
   });
 
