@@ -160,18 +160,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     5. LIGHTBOX MODAL (MENDUKUNG GAMBAR TUNGGAL & SLIDER KLASTER KURSUS)
+     5. LIGHTBOX MODAL (GAMBAR TUNGGAL, SLIDER KURSUS & STUDI KASUS PROYEK)
      ========================================================================== */
   const lightboxModal = document.getElementById('lightbox-modal');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxCounter = document.getElementById('lightbox-counter');
+
+  // Elemen Mode 1: Gambar & Slider Sertifikat
+  const lightboxImageContainer = document.getElementById('lightbox-image-Container');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
-  const lightboxClose = document.getElementById('lightbox-close');
   const lightboxPrev = document.getElementById('lightbox-prev');
   const lightboxNext = document.getElementById('lightbox-next');
-  const lightboxCounter = document.getElementById('lightbox-counter');
+
+  // Elemen Mode 2: Detail Studi Kasus Proyek
+  const lightboxProjectCard = document.getElementById('lightbox-project-card');
+  const projectModalImg = document.getElementById('project-modal-img');
+  const projectModalImgFallback = document.getElementById('project-modal-img-fallback');
+  const projectModalTags = document.getElementById('project-modal-tags');
+  const projectModalPeriod = document.getElementById('project-modal-period');
+  const projectModalCategory = document.getElementById('project-modal-category');
+  const projectModalTitle = document.getElementById('project-modal-title');
+  const projectModalProblem = document.getElementById('project-modal-problem');
+  const projectModalSolution = document.getElementById('project-modal-solution');
+  const projectModalResult = document.getElementById('project-modal-result');
 
   const singleTriggers = document.querySelectorAll('.lightbox-trigger');
   const galleryTriggers = document.querySelectorAll('.lightbox-gallery-trigger');
+  const projectTriggers = document.querySelectorAll('.project-modal-trigger');
 
   let currentGallery = [];
   let currentIndex = 0;
@@ -179,10 +195,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const renderLightboxSlide = () => {
     if (!lightboxModal || !lightboxImg || currentGallery.length === 0) return;
 
+    // Pastikan Mode Gambar tampil dan Mode Proyek disembunyikan
+    if (lightboxProjectCard) lightboxProjectCard.classList.add('hidden');
+    if (lightboxImageContainer) lightboxImageContainer.classList.remove('hidden');
+
     const currentItem = currentGallery[currentIndex];
     const totalItems = currentGallery.length;
 
-    // Atur visibilitas tombol geser & indikator jumlah sertifikat
     if (totalItems > 1) {
       if (lightboxPrev) lightboxPrev.classList.remove('hidden');
       if (lightboxNext) lightboxNext.classList.remove('hidden');
@@ -201,7 +220,6 @@ document.addEventListener('DOMContentLoaded', () => {
       lightboxCaption.textContent = currentItem.caption || '';
     }
 
-    // Pasang handler onerror SEBELUM mengatur atribut src
     lightboxImg.onerror = () => {
       lightboxImg.classList.add('hidden');
       if (lightboxCaption) {
@@ -226,12 +244,81 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'hidden';
   };
 
+  // Fungsi Pembuka Mode 2: Studi Kasus Proyek Teknis
+  const openProjectModal = (triggerEl) => {
+    if (!lightboxModal || !lightboxProjectCard) return;
+
+    currentGallery = [];
+    if (lightboxImageContainer) lightboxImageContainer.classList.add('hidden');
+    if (lightboxCounter) lightboxCounter.classList.add('hidden');
+    lightboxProjectCard.classList.remove('hidden');
+
+    const imgSrc = triggerEl.getAttribute('data-img') || '';
+    const period = triggerEl.getAttribute('data-period') || '';
+    const category = triggerEl.getAttribute('data-category') || '';
+    const title = triggerEl.getAttribute('data-title') || '';
+    const tagsRaw = triggerEl.getAttribute('data-tags') || '';
+    const problem = triggerEl.getAttribute('data-problem') || '';
+    const solution = triggerEl.getAttribute('data-solution') || '';
+    const result = triggerEl.getAttribute('data-result') || '';
+
+    if (projectModalPeriod) projectModalPeriod.textContent = period;
+    if (projectModalCategory) projectModalCategory.textContent = category;
+    if (projectModalTitle) projectModalTitle.textContent = title;
+    if (projectModalProblem) projectModalProblem.textContent = problem;
+    if (projectModalSolution) projectModalSolution.textContent = solution;
+    if (projectModalResult) projectModalResult.textContent = result;
+
+    if (projectModalTags) {
+      projectModalTags.innerHTML = '';
+      tagsRaw.split(',').forEach((tag) => {
+        const cleanTag = tag.trim();
+        if (cleanTag) {
+          const span = document.createElement('span');
+          span.className = 'skill-tag';
+          span.textContent = cleanTag;
+          projectModalTags.appendChild(span);
+        }
+      });
+    }
+
+    if (projectModalImg) {
+      projectModalImg.classList.remove('hidden');
+      if (projectModalImgFallback) projectModalImgFallback.classList.add('hidden');
+
+      projectModalImg.onerror = () => {
+        projectModalImg.classList.add('hidden');
+        if (projectModalImgFallback) {
+          projectModalImgFallback.classList.remove('hidden');
+          projectModalImgFallback.innerHTML = `
+            <span class="block text-amber-500 dark:text-amber-400 font-semibold mb-1">Visual proyek belum tersedia:</span>
+            <code class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-900 text-slate-600 dark:text-slate-300 text-[11px] break-all">${imgSrc}</code>
+          `;
+        }
+      };
+
+      projectModalImg.src = imgSrc;
+    }
+
+    lightboxModal.classList.remove('hidden');
+    lightboxModal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  };
+
   const closeLightbox = () => {
-    if (!lightboxModal || !lightboxImg) return;
+    if (!lightboxModal) return;
     lightboxModal.classList.add('hidden');
     lightboxModal.classList.remove('flex');
-    lightboxImg.onerror = null;
-    lightboxImg.removeAttribute('src');
+
+    if (lightboxImg) {
+      lightboxImg.onerror = null;
+      lightboxImg.removeAttribute('src');
+    }
+    if (projectModalImg) {
+      projectModalImg.onerror = null;
+      projectModalImg.removeAttribute('src');
+    }
+
     currentGallery = [];
     currentIndex = 0;
     document.body.style.overflow = '';
@@ -251,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderLightboxSlide();
   };
 
-  // Trigger untuk gambar tunggal (Pengalaman, Proyek, Sertifikasi Utama, Prestasi, Organisasi)
+  // Trigger untuk gambar tunggal (Pengalaman, Sertifikasi Utama, Prestasi, Organisasi)
   singleTriggers.forEach((trigger) => {
     trigger.addEventListener('click', (e) => {
       e.preventDefault();
@@ -265,7 +352,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Trigger untuk 6 Keping Klaster Kursus (Multi-Slide — Bisa Di-disable via data-gallery-disabled="true")
   galleryTriggers.forEach((trigger) => {
-    // Jika masih di-disable, jangan aktifkan klik pop-up
     if (trigger.getAttribute('data-gallery-disabled') === 'true') return;
 
     trigger.classList.add('cursor-pointer');
@@ -281,6 +367,14 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (err) {
         console.error('Format data-gallery tidak valid:', err);
       }
+    });
+  });
+
+  // Trigger untuk 6 Kartu Proyek Teknis (Studi Kasus Proyek)
+  projectTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      openProjectModal(trigger);
     });
   });
 
